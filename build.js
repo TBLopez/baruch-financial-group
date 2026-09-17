@@ -14,7 +14,7 @@ const fs = require('fs');
 const path = require('path');
 
 const DIR = path.join(__dirname, 'assets', 'js');
-const ORDER = ['data', 'theme-meta', 'site', 'theme', 'pdf', 'home', 'media', 'resources', 'gallery'];
+const ORDER = ['data', 'theme-meta', 'site', 'theme', 'pdf', 'home', 'media', 'resources', 'events', 'gallery'];
 
 function transform(name, src) {
   const exports = new Set();

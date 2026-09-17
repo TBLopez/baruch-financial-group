@@ -38,17 +38,7 @@ function heroMarkup() {
             ${s.ctas.map((c) => `<a class="btn ${c.style}" href="${c.href}">${esc(c.label)}${ICONS.arrowRight}</a>`).join('')}
           </div>
         </div>
-        <aside class="hero-card" aria-label="${esc(s.nav)} key figures">
-          <p class="hero-card-title">${esc(s.nav)} — at a glance</p>
-          <div class="kpis">
-            ${s.cards.map((k) => `
-              <div class="kpi">
-                <span class="kpi-label">${esc(k.label)}</span>
-                <span class="kpi-val" data-val="${esc(k.value)}" data-suffix="${esc(k.suffix)}">0${esc(k.suffix)}</span>
-              </div>`).join('')}
-          </div>
-          <p class="hero-card-foot">${esc(s.cardFoot)}</p>
-        </aside>
+        ${slideAside(s)}
       </div>
     </div>`).join('');
 
@@ -74,6 +64,37 @@ function heroMarkup() {
         </div>
       </div>
     </div>`;
+}
+
+/* Right-hand hero panel: the "at a glance" figures, or — for the Member of
+   the Week slide — a photo card with a short list of what they have done. */
+function slideAside(s) {
+  if (s.member) {
+    return `
+    <aside class="hero-card hero-member" aria-label="Member of the week">
+      <div class="member-photo"><img src="${esc(s.member.photo)}" alt="Portrait of ${esc(s.member.name)}" loading="lazy"></div>
+      <div class="member-body">
+        <p class="hero-card-title">Member of the week</p>
+        <h3 class="member-name">${esc(s.member.name)}</h3>
+        <p class="member-role">${esc(s.member.role)}</p>
+        <ul class="member-points">
+          ${s.member.points.map((p) => `<li>${ICONS.check}<span>${esc(p)}</span></li>`).join('')}
+        </ul>
+      </div>
+    </aside>`;
+  }
+  return `
+    <aside class="hero-card" aria-label="${esc(s.nav)} key figures">
+      <p class="hero-card-title">${esc(s.nav)} — at a glance</p>
+      <div class="kpis">
+        ${s.cards.map((k) => `
+          <div class="kpi">
+            <span class="kpi-label">${esc(k.label)}</span>
+            <span class="kpi-val" data-val="${esc(k.value)}" data-suffix="${esc(k.suffix)}">0${esc(k.suffix)}</span>
+          </div>`).join('')}
+      </div>
+      <p class="hero-card-foot">${esc(s.cardFoot)}</p>
+    </aside>`;
 }
 
 /* -------------------------------------------------------------- carousel */

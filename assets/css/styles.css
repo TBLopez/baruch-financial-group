@@ -380,6 +380,20 @@ p { margin: 0; text-wrap: pretty; }
   font-size: 11.5px; color: rgba(255, 255, 255, 0.55);
 }
 
+/* hero member-of-the-week card (photo + blurb instead of the figure grid) */
+.hero-member { padding: 0; overflow: hidden; }
+.hero-member .member-photo {
+  aspect-ratio: 16 / 10; background: var(--hero-base); overflow: hidden;
+}
+.hero-member .member-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-member .member-body { padding: 18px 20px 20px; }
+.hero-member .hero-card-title { margin-bottom: 10px; }
+.member-name { color: #fff; font-family: var(--display); font-size: 24px; letter-spacing: -0.01em; margin: 0; }
+.member-role { color: rgba(255, 255, 255, 0.62); font-size: 13px; margin-top: 3px; }
+.member-points { list-style: none; margin: 15px 0 0; padding: 0; display: grid; gap: 9px; }
+.member-points li { display: flex; gap: 10px; align-items: flex-start; color: rgba(255, 255, 255, 0.85); font-size: 13.5px; line-height: 1.45; }
+.member-points svg { width: 15px; height: 15px; color: var(--accent-on-dark); flex: none; margin-top: 2.5px; }
+
 /* hero tab bar (the 3 "sections") */
 .hero-tabs {
   position: relative; z-index: 3;
@@ -391,7 +405,7 @@ p { margin: 0; text-wrap: pretty; }
 .hero-tabs-inner {
   width: 100%; max-width: var(--maxw); margin-inline: auto;
   padding: 0 var(--pad);
-  display: grid; grid-template-columns: repeat(3, 1fr) auto;
+  display: grid; grid-template-columns: repeat(4, 1fr) auto;
   gap: 0; align-items: stretch;
 }
 .hero-tab {
@@ -712,6 +726,22 @@ p { margin: 0; text-wrap: pretty; }
 .res-head .count-lbl { font-size: 13.5px; color: var(--ink-3); }
 
 .program-list { display: flex; flex-direction: column; gap: 14px; }
+
+/* ---------------------------------------------------------- event cards --
+   The Events tab reuses the Resources layout (filter rail + list) but each
+   result is a compact card with a date block rather than an accordion.      */
+.event-card { display: flex; gap: 18px; padding: 20px; align-items: stretch; }
+.event-date {
+  flex: none; width: 66px; min-height: 74px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: var(--tint); border: 1px solid var(--line); border-radius: var(--r-md);
+}
+.event-day { font-family: var(--display); font-size: 28px; line-height: 1; color: var(--ink-strong); }
+.event-month { font-size: 11px; letter-spacing: 0.14em; font-weight: 700; color: var(--accent-text); margin-top: 5px; }
+.event-body { min-width: 0; flex: 1; }
+.event-body h3 { font-size: 19px; line-height: 1.25; margin-bottom: 0; }
+.event-meta { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 13px; color: var(--ink-2); margin-top: 7px; }
+.event-desc { font-size: 14px; color: var(--ink-2); margin-top: 10px; }
 .program {
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg);
   box-shadow: var(--sh-1); overflow: hidden;
@@ -925,7 +955,7 @@ p { margin: 0; text-wrap: pretty; }
 
 @media (max-width: 620px) {
   .grid.g3, .feature-row { grid-template-columns: 1fr; }
-  .hero-tabs-inner { grid-template-columns: repeat(3, 1fr); }
+  .hero-tabs-inner { grid-template-columns: repeat(4, 1fr); }
   .hero-tab { padding: 14px 12px 14px 0; }
   .hero-tab + .hero-tab { padding-left: 12px; }
   .hero-tab-label { font-size: 13.5px; }

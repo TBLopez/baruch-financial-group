@@ -101,6 +101,30 @@ export const SLIDES = [
     ],
     cardFoot: 'Class of 2026 outcomes survey, 71 respondents.',
   },
+  {
+    id: 'member',
+    eyebrow: 'Section 04 — Member of the Week',
+    nav: 'Member',
+    navSub: 'This week’s spotlight',
+    title: 'Meet <em>Jordan Rivera</em>.',
+    lede:
+      'Jordan joined as a first-year with no finance background and is now a fund analyst. This term she led the qualifier-winning pitch team, mentored four first-years through analyst training, and wrote the sector note behind the committee’s newest position.',
+    ctas: [
+      { label: 'Nominate someone', href: 'events.html', style: 'brass' },
+      { label: 'See past spotlights', href: 'media.html?tag=Speaker', style: 'ghost-inv' },
+    ],
+    art: 'art-b',
+    member: {
+      name: 'Jordan Rivera',
+      role: 'Junior · Equity research analyst',
+      photo: 'assets/member-jordan.svg',
+      points: [
+        'Led the qualifier-winning pitch team',
+        'Mentors four first-year analysts',
+        'Authored the Q3 sector note',
+      ],
+    },
+  },
 ];
 
 /* ------------------------------------------------------------- resources */
@@ -477,5 +501,83 @@ export const INSIGHTS = [
     blurb: 'Five alumni on what actually works when you have no contacts yet.',
     read: '12 min',
     tag: 'Careers',
+  },
+];
+
+/* --------------------------------------------------------- event calendar
+   The Events tab. Each entry has an ISO date, a time and a location; the
+   "Upcoming / Past" filter is derived from the date, not stored.           */
+export const EVENT_CATEGORIES = ['Speaker', 'Workshop', 'Competition', 'Recruiting', 'Social', 'Market Update'];
+
+export const EVENTS = [
+  {
+    id: 'analyst-orientation',
+    title: 'Analyst training orientation',
+    category: 'Workshop',
+    date: '2026-09-15',
+    time: '7:00pm – 8:30pm',
+    location: 'NVC, Room 14-220',
+    audience: 'First-years',
+    desc: 'The welcome session for the autumn cohort: what the eight weeks look like, how problem sets are marked, and the Bloomberg certification in week six.',
+  },
+  {
+    id: 'fall-mixer',
+    title: 'Fall kickoff mixer',
+    category: 'Social',
+    date: '2026-09-22',
+    time: '6:30pm – 8:00pm',
+    location: 'NVC, Room 14-220',
+    audience: 'All members',
+    desc: 'Pizza, a tour of the fund, and sign-ups for the pitch competition and mentorship matching.',
+  },
+  {
+    id: 'dcf-workshop',
+    title: 'Workshop: build a DCF from scratch',
+    category: 'Workshop',
+    date: '2026-09-29',
+    time: '7:00pm – 9:00pm',
+    location: 'NVC, Room 14-220',
+    audience: 'All members',
+    desc: 'Week five of analyst training, open to everyone: unlevered free cash flow, WACC and terminal value, built live in Excel.',
+  },
+  {
+    id: 'pitch-deadline',
+    title: 'Stock pitch competition — registration closes',
+    category: 'Competition',
+    date: '2026-10-06',
+    time: '11:59pm',
+    location: 'Online',
+    audience: 'All students',
+    desc: 'Last day to register. Teams of up to three, any major, no membership required. $2,500 prize pool.',
+  },
+  {
+    id: 'guest-speaker',
+    title: 'Guest speaker: breaking into IB from a non-target',
+    category: 'Speaker',
+    date: '2026-10-08',
+    time: '6:00pm – 7:30pm',
+    location: 'Mason Hall, Room 118',
+    audience: 'All members',
+    desc: 'An alumnus in M&A covers what actually matters when recruiting from a non-target, and the mistakes that sink most applicants.',
+  },
+  {
+    id: 'recruiting-panel',
+    title: 'Recruiting timeline panel',
+    category: 'Recruiting',
+    date: '2026-10-20',
+    time: '6:30pm – 8:00pm',
+    location: 'NVC, Room 14-220',
+    audience: 'Juniors & seniors',
+    desc: 'Alumni walk through the 2027 recruiting calendar: applications, networking, superdays and offer timelines.',
+  },
+  {
+    id: 'fund-review',
+    title: 'Fund update: what the committee changed this quarter',
+    category: 'Market Update',
+    date: '2026-11-12',
+    time: '7:00pm – 8:00pm',
+    location: 'NVC, Room 14-220',
+    audience: 'All members',
+    desc: 'Two exits, one new position, and why we trimmed the alternatives sleeve — the quarterly review, open to all members.',
   },
 ];

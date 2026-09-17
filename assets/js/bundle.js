@@ -114,6 +114,30 @@ const SLIDES = [
     ],
     cardFoot: 'Class of 2026 outcomes survey, 71 respondents.',
   },
+  {
+    id: 'member',
+    eyebrow: 'Section 04 — Member of the Week',
+    nav: 'Member',
+    navSub: 'This week’s spotlight',
+    title: 'Meet <em>Jordan Rivera</em>.',
+    lede:
+      'Jordan joined as a first-year with no finance background and is now a fund analyst. This term she led the qualifier-winning pitch team, mentored four first-years through analyst training, and wrote the sector note behind the committee’s newest position.',
+    ctas: [
+      { label: 'Nominate someone', href: 'events.html', style: 'brass' },
+      { label: 'See past spotlights', href: 'media.html?tag=Speaker', style: 'ghost-inv' },
+    ],
+    art: 'art-b',
+    member: {
+      name: 'Jordan Rivera',
+      role: 'Junior · Equity research analyst',
+      photo: 'assets/member-jordan.svg',
+      points: [
+        'Led the qualifier-winning pitch team',
+        'Mentors four first-year analysts',
+        'Authored the Q3 sector note',
+      ],
+    },
+  },
 ];
 
 /* ------------------------------------------------------------- resources */
@@ -493,7 +517,85 @@ const INSIGHTS = [
   },
 ];
 
-return { FIRM, BRAND, AUM_BREAKDOWN, SLIDES, CATEGORIES, AUDIENCES, PROGRAMS, SAMPLE_MEDIA, INSIGHTS };
+/* --------------------------------------------------------- event calendar
+   The Events tab. Each entry has an ISO date, a time and a location; the
+   "Upcoming / Past" filter is derived from the date, not stored.           */
+const EVENT_CATEGORIES = ['Speaker', 'Workshop', 'Competition', 'Recruiting', 'Social', 'Market Update'];
+
+const EVENTS = [
+  {
+    id: 'analyst-orientation',
+    title: 'Analyst training orientation',
+    category: 'Workshop',
+    date: '2026-09-15',
+    time: '7:00pm – 8:30pm',
+    location: 'NVC, Room 14-220',
+    audience: 'First-years',
+    desc: 'The welcome session for the autumn cohort: what the eight weeks look like, how problem sets are marked, and the Bloomberg certification in week six.',
+  },
+  {
+    id: 'fall-mixer',
+    title: 'Fall kickoff mixer',
+    category: 'Social',
+    date: '2026-09-22',
+    time: '6:30pm – 8:00pm',
+    location: 'NVC, Room 14-220',
+    audience: 'All members',
+    desc: 'Pizza, a tour of the fund, and sign-ups for the pitch competition and mentorship matching.',
+  },
+  {
+    id: 'dcf-workshop',
+    title: 'Workshop: build a DCF from scratch',
+    category: 'Workshop',
+    date: '2026-09-29',
+    time: '7:00pm – 9:00pm',
+    location: 'NVC, Room 14-220',
+    audience: 'All members',
+    desc: 'Week five of analyst training, open to everyone: unlevered free cash flow, WACC and terminal value, built live in Excel.',
+  },
+  {
+    id: 'pitch-deadline',
+    title: 'Stock pitch competition — registration closes',
+    category: 'Competition',
+    date: '2026-10-06',
+    time: '11:59pm',
+    location: 'Online',
+    audience: 'All students',
+    desc: 'Last day to register. Teams of up to three, any major, no membership required. $2,500 prize pool.',
+  },
+  {
+    id: 'guest-speaker',
+    title: 'Guest speaker: breaking into IB from a non-target',
+    category: 'Speaker',
+    date: '2026-10-08',
+    time: '6:00pm – 7:30pm',
+    location: 'Mason Hall, Room 118',
+    audience: 'All members',
+    desc: 'An alumnus in M&A covers what actually matters when recruiting from a non-target, and the mistakes that sink most applicants.',
+  },
+  {
+    id: 'recruiting-panel',
+    title: 'Recruiting timeline panel',
+    category: 'Recruiting',
+    date: '2026-10-20',
+    time: '6:30pm – 8:00pm',
+    location: 'NVC, Room 14-220',
+    audience: 'Juniors & seniors',
+    desc: 'Alumni walk through the 2027 recruiting calendar: applications, networking, superdays and offer timelines.',
+  },
+  {
+    id: 'fund-review',
+    title: 'Fund update: what the committee changed this quarter',
+    category: 'Market Update',
+    date: '2026-11-12',
+    time: '7:00pm – 8:00pm',
+    location: 'NVC, Room 14-220',
+    audience: 'All members',
+    desc: 'Two exits, one new position, and why we trimmed the alternatives sleeve — the quarterly review, open to all members.',
+  },
+];
+
+return { FIRM, BRAND, AUM_BREAKDOWN, SLIDES, CATEGORIES, AUDIENCES, PROGRAMS, SAMPLE_MEDIA, INSIGHTS, EVENT_CATEGORIES, EVENTS };
 });
 
 __def("theme-meta", function () {
@@ -639,6 +741,7 @@ function toast(title, body = '', kind = 'ok') {
 const {FIRM} = __req('data');
 const NAV = [
   { href: 'index.html', label: 'Home' },
+  { href: 'events.html', label: 'Events' },
   { href: 'media.html', label: 'Media' },
   { href: 'resources.html', label: 'Resources' },
 ];
@@ -663,7 +766,7 @@ function mountChrome(page, { overHero = false } = {}) {
       </a>
       <nav class="nav" aria-label="Primary">${links}</nav>
       <div class="header-actions">
-        <a class="btn sm ${overHero ? 'ghost-inv' : 'ghost'}" href="resources.html?id=analyst-training">Join the group</a>
+        <a class="btn sm ${overHero ? 'ghost-inv' : 'ghost'}" href="resources.html?id=analyst-training">Join the programme</a>
         <button class="burger" aria-label="Menu" aria-expanded="false">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
@@ -671,7 +774,7 @@ function mountChrome(page, { overHero = false } = {}) {
     </div>
     <div class="mobile-nav" id="mobileNav">
       ${NAV.map((n) => `<a href="${n.href}" class="${n.href === page ? 'active' : ''}">${n.label}</a>`).join('')}
-      <a href="resources.html?id=analyst-training">Join the group</a>
+      <a href="resources.html?id=analyst-training">Join the programme</a>
     </div>`;
 
   document.body.prepend(header);
@@ -708,7 +811,7 @@ function renderFooter() {
           <li><a href="index.html">Home</a></li>
           <li><a href="index.html#approach">How we work</a></li>
           <li><a href="resources.html">All programmes</a></li>
-          <li><a href="resources.html?id=analyst-training">Join the group</a></li>
+          <li><a href="resources.html?id=analyst-training">Join the programme</a></li>
         </ul></div>
         <div><h5>Media</h5><ul>
           <li><a href="media.html">Video library</a></li>
@@ -1303,17 +1406,7 @@ function heroMarkup() {
             ${s.ctas.map((c) => `<a class="btn ${c.style}" href="${c.href}">${esc(c.label)}${ICONS.arrowRight}</a>`).join('')}
           </div>
         </div>
-        <aside class="hero-card" aria-label="${esc(s.nav)} key figures">
-          <p class="hero-card-title">${esc(s.nav)} — at a glance</p>
-          <div class="kpis">
-            ${s.cards.map((k) => `
-              <div class="kpi">
-                <span class="kpi-label">${esc(k.label)}</span>
-                <span class="kpi-val" data-val="${esc(k.value)}" data-suffix="${esc(k.suffix)}">0${esc(k.suffix)}</span>
-              </div>`).join('')}
-          </div>
-          <p class="hero-card-foot">${esc(s.cardFoot)}</p>
-        </aside>
+        ${slideAside(s)}
       </div>
     </div>`).join('');
 
@@ -1339,6 +1432,37 @@ function heroMarkup() {
         </div>
       </div>
     </div>`;
+}
+
+/* Right-hand hero panel: the "at a glance" figures, or — for the Member of
+   the Week slide — a photo card with a short list of what they have done. */
+function slideAside(s) {
+  if (s.member) {
+    return `
+    <aside class="hero-card hero-member" aria-label="Member of the week">
+      <div class="member-photo"><img src="${esc(s.member.photo)}" alt="Portrait of ${esc(s.member.name)}" loading="lazy"></div>
+      <div class="member-body">
+        <p class="hero-card-title">Member of the week</p>
+        <h3 class="member-name">${esc(s.member.name)}</h3>
+        <p class="member-role">${esc(s.member.role)}</p>
+        <ul class="member-points">
+          ${s.member.points.map((p) => `<li>${ICONS.check}<span>${esc(p)}</span></li>`).join('')}
+        </ul>
+      </div>
+    </aside>`;
+  }
+  return `
+    <aside class="hero-card" aria-label="${esc(s.nav)} key figures">
+      <p class="hero-card-title">${esc(s.nav)} — at a glance</p>
+      <div class="kpis">
+        ${s.cards.map((k) => `
+          <div class="kpi">
+            <span class="kpi-label">${esc(k.label)}</span>
+            <span class="kpi-val" data-val="${esc(k.value)}" data-suffix="${esc(k.suffix)}">0${esc(k.suffix)}</span>
+          </div>`).join('')}
+      </div>
+      <p class="hero-card-foot">${esc(s.cardFoot)}</p>
+    </aside>`;
 }
 
 /* -------------------------------------------------------------- carousel */
@@ -2389,6 +2513,160 @@ function bootResources() {
 if (document.body.dataset.page === 'resources') bootResources();
 
 return { bootResources };
+});
+
+__def("events", function () {
+/* ==========================================================================
+   events.js — Events tab (calendar)
+   A chronological event list that reuses the Resources layout: a filter rail
+   (category + upcoming/past), a search box, a sort control, and a card list.
+   ========================================================================== */
+
+const {$, esc, debounce, initReveal, mountChrome} = __req('site');
+const {mountThemeDock} = __req('theme');
+const {EVENTS, EVENT_CATEGORIES} = __req('data');
+const ALL = 'All';
+const state = { q: '', cat: 'All', when: 'upcoming', sort: 'soonest' };
+
+/* ------------------------------------------------------------ date utils */
+const todayIso = () => new Date().toISOString().slice(0, 10);
+const isPast = (e) => e.date < todayIso();
+const dayNum = (iso) => iso.slice(8, 10);
+const monthLabel = (iso) =>
+  new Date(iso + 'T12:00:00').toLocaleDateString('en-US', { month: 'short' }).toUpperCase();
+
+/* Filter + sort the catalogue from data.js. "Soonest" puts future events
+   first; "latest" inverts it. The past/upcoming split derives from the date. */
+function applyFilters() {
+  const q = state.q.trim().toLowerCase();
+  const list = EVENTS.filter((e) => {
+    if (state.cat !== ALL && e.category !== state.cat) return false;
+    if (state.when === 'upcoming' && isPast(e)) return false;
+    if (state.when === 'past' && !isPast(e)) return false;
+    if (!q) return true;
+    return `${e.title} ${e.desc} ${e.category} ${e.location} ${e.audience}`
+      .toLowerCase().includes(q);
+  });
+  const dir = state.sort === 'soonest' ? 1 : -1;
+  return list.sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0) * dir);
+}
+
+/* -------------------------------------------------------------- rail UI */
+function renderRail() {
+  const catHost = $('#evCatList');
+  const whenHost = $('#evWhenList');
+  if (!catHost) return;
+
+  const countCat = (c) => EVENTS.filter((e) => e.category === c).length;
+  const upcoming = EVENTS.filter((e) => !isPast(e)).length;
+  const past = EVENTS.filter((e) => isPast(e)).length;
+
+  const item = (key, value, label, count, isOn) => `
+    <button class="rail-item ${isOn ? 'is-on' : ''}" data-${key}="${esc(value)}" aria-pressed="${isOn}">
+      <span>${esc(label)}</span><span class="n">${count}</span>
+    </button>`;
+
+  catHost.innerHTML =
+    item('cat', ALL, 'All categories', EVENTS.length, state.cat === ALL) +
+    EVENT_CATEGORIES.map((c) => item('cat', c, c, countCat(c), state.cat === c)).join('');
+
+  whenHost.innerHTML =
+    item('when', 'upcoming', 'Upcoming', upcoming, state.when === 'upcoming') +
+    item('when', 'past', 'Past', past, state.when === 'past') +
+    item('when', 'all', 'All', EVENTS.length, state.when === 'all');
+}
+
+/* ----------------------------------------------------------- event card */
+function cardHtml(e) {
+  const past = isPast(e);
+  return `
+    <article class="card event-card">
+      <div class="event-date" aria-hidden="true">
+        <span class="event-day">${dayNum(e.date)}</span>
+        <span class="event-month">${monthLabel(e.date)}</span>
+      </div>
+      <div class="event-body">
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span class="pill slate">${esc(e.category)}</span>
+          <span class="pill ${past ? 'warn' : 'ok'}">${past ? 'Past' : 'Upcoming'}</span>
+        </div>
+        <h3>${esc(e.title)}</h3>
+        <p class="event-meta">
+          <span>${esc(e.time)}</span><span>·</span><span>${esc(e.location)}</span><span>·</span><span>${esc(e.audience)}</span>
+        </p>
+        <p class="event-desc">${esc(e.desc)}</p>
+      </div>
+    </article>`;
+}
+
+function renderList() {
+  const host = $('#eventList');
+  const count = $('#evCount');
+  if (!host) return;
+  const list = applyFilters();
+  if (count) count.textContent = `${list.length} of ${EVENTS.length} events`;
+  if (!list.length) {
+    host.innerHTML = `
+      <div class="empty">
+        <h3>No events match those filters</h3>
+        <p>Loosen a filter or clear the search box to see the full calendar.</p>
+        <div style="margin-top:18px"><button class="btn ghost" data-reset>Reset all filters</button></div>
+      </div>`;
+    return;
+  }
+  host.innerHTML = list.map(cardHtml).join('');
+}
+
+/* --------------------------------------------------------------- wiring */
+function pick(e, key) {
+  const b = e.target.closest(`[data-${key}]`);
+  if (!b) return;
+  state[key] = b.dataset[key];
+  renderRail();
+  renderList();
+}
+
+function resetFilters() {
+  state.q = '';
+  state.cat = ALL;
+  state.when = 'upcoming';
+  const s = $('#evSearch');
+  if (s) s.value = '';
+  renderRail();
+  renderList();
+}
+
+function wire() {
+  $('#evSearch')?.addEventListener('input', debounce((e) => {
+    state.q = e.target.value;
+    renderList();
+  }, 170));
+
+  $('#evCatList')?.addEventListener('click', (e) => pick(e, 'cat'));
+  $('#evWhenList')?.addEventListener('click', (e) => pick(e, 'when'));
+
+  $('#evSort')?.addEventListener('change', (e) => { state.sort = e.target.value; renderList(); });
+
+  $('#eventList')?.addEventListener('click', (e) => {
+    if (e.target.closest('[data-reset]')) resetFilters();
+  });
+
+  $('#evReset')?.addEventListener('click', resetFilters);
+}
+
+/* ------------------------------------------------------------------- boot */
+function bootEvents() {
+  mountChrome('events.html');
+  mountThemeDock();
+  renderRail();
+  renderList();
+  wire();
+  initReveal();
+}
+
+if (document.body.dataset.page === 'events') bootEvents();
+
+return { bootEvents };
 });
 
 __def("gallery", function () {

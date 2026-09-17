@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Events — Baruch College Financial Group</title>
+<meta name="description" content="The group's calendar: workshops, speakers, competitions, socials and market updates.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#07101f">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Baruch College Financial Group">
+<meta property="og:title" content="Events — Baruch College Financial Group">
+<meta property="og:description" content="The group's calendar: workshops, speakers, competitions, socials and market updates.">
+<!-- TODO: make og:image / og:url absolute once you have a domain -->
+<meta property="og:image" content="assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Events — Baruch College Financial Group">
+<meta name="twitter:description" content="The group's calendar: workshops, speakers, competitions, socials and market updates.">
+<meta name="twitter:image" content="assets/og.jpg">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/themes.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script>
+  (function () {
+    try {
+      var q = new URLSearchParams(location.search).get('theme');
+      var s = localStorage.getItem('bcfg.theme');
+      var ok = ['ivory', 'atlas', 'terrace', 'nightfall', 'varsity'];
+      document.documentElement.dataset.theme = ok.indexOf(q) > -1 ? q : (ok.indexOf(s) > -1 ? s : 'ivory');
+    } catch (e) { document.documentElement.dataset.theme = 'ivory'; }
+  })();
+</script>
+</head>
+<body data-page="events">
+<a class="skip" href="#main">Skip to content</a>
+
+<main id="main">
+  <div class="wrap page-head">
+    <p class="crumbs">Home / <b>Events</b></p>
+    <h1>Events</h1>
+    <p class="lede">
+      Workshops, speakers, competitions and socials — everything the group runs, on one calendar.
+      New sessions are added as they are confirmed, so check back before each weekly meeting.
+    </p>
+  </div>
+
+  <div class="wrap res-layout">
+    <!-- ── Filter rail ── -->
+    <aside class="filter-rail" aria-label="Filters">
+      <div class="rail-group">
+        <h4>Category</h4>
+        <div class="rail-list" id="evCatList" role="group" aria-label="Filter by category"></div>
+      </div>
+      <div class="rail-group">
+        <h4>When</h4>
+        <div class="rail-list" id="evWhenList" role="group" aria-label="Filter by timing"></div>
+      </div>
+      <button class="btn ghost sm" id="evReset" type="button">Reset all filters</button>
+      <div class="rail-note">
+        <strong>Open to every major</strong>
+        <p>All events are free. Dates, rooms and times are sample data for this prototype.</p>
+      </div>
+    </aside>
+
+    <!-- ── Results ── -->
+    <section aria-label="Event results">
+      <div class="toolbar" style="position:static;background:transparent;backdrop-filter:none;border-top:0;padding-top:0">
+        <label class="search-box" for="evSearch">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input id="evSearch" type="search" placeholder="Search events…" autocomplete="off">
+        </label>
+        <div class="toolbar-right">
+          <label class="sr-only" for="evSort">Sort</label>
+          <select class="select" id="evSort">
+            <option value="soonest">Soonest first</option>
+            <option value="latest">Latest first</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="res-head">
+        <p class="count-lbl" id="evCount">Loading events…</p>
+        <p class="tiny muted">Listed chronologically</p>
+      </div>
+
+      <div class="program-list" id="eventList"></div>
+
+      <noscript>
+        <div class="empty" style="margin-top:26px">
+          <h3>JavaScript is required</h3>
+          <p>The calendar is rendered client-side so it can filter and sort without a server.</p>
+        </div>
+      </noscript>
+    </section>
+  </div>
+
+  <!-- ── Bottom CTA ── -->
+  <section class="section paper2">
+    <div class="wrap">
+      <div class="card card-pad reveal" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center;padding:clamp(28px,4vw,44px)">
+        <div>
+          <p class="eyebrow">Something to add?</p>
+          <h2 style="font-size:clamp(24px,3vw,34px);margin-top:12px">Hosting a session? Put it on the calendar.</h2>
+          <p class="lede" style="margin-top:12px">Members run most of our workshops. If you have a topic, we will help you build it, promote it and record it.</p>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn brass" href="resources.html?id=analyst-training">Join the programme</a>
+          <a class="btn ghost" href="mailto:baruchfinancialgroup@gmail.com">Email us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script defer src="assets/js/bundle.js"></script>
+</body>
+</html>

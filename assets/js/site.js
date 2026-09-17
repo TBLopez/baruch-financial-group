@@ -78,6 +78,7 @@ import { FIRM } from './data.js';
 
 const NAV = [
   { href: 'index.html', label: 'Home' },
+  { href: 'events.html', label: 'Events' },
   { href: 'media.html', label: 'Media' },
   { href: 'resources.html', label: 'Resources' },
 ];
@@ -102,7 +103,7 @@ export function mountChrome(page, { overHero = false } = {}) {
       </a>
       <nav class="nav" aria-label="Primary">${links}</nav>
       <div class="header-actions">
-        <a class="btn sm ${overHero ? 'ghost-inv' : 'ghost'}" href="resources.html?id=analyst-training">Join the group</a>
+        <a class="btn sm ${overHero ? 'ghost-inv' : 'ghost'}" href="resources.html?id=analyst-training">Join the programme</a>
         <button class="burger" aria-label="Menu" aria-expanded="false">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
@@ -110,7 +111,7 @@ export function mountChrome(page, { overHero = false } = {}) {
     </div>
     <div class="mobile-nav" id="mobileNav">
       ${NAV.map((n) => `<a href="${n.href}" class="${n.href === page ? 'active' : ''}">${n.label}</a>`).join('')}
-      <a href="resources.html?id=analyst-training">Join the group</a>
+      <a href="resources.html?id=analyst-training">Join the programme</a>
     </div>`;
 
   document.body.prepend(header);
@@ -147,7 +148,7 @@ function renderFooter() {
           <li><a href="index.html">Home</a></li>
           <li><a href="index.html#approach">How we work</a></li>
           <li><a href="resources.html">All programmes</a></li>
-          <li><a href="resources.html?id=analyst-training">Join the group</a></li>
+          <li><a href="resources.html?id=analyst-training">Join the programme</a></li>
         </ul></div>
         <div><h5>Media</h5><ul>
           <li><a href="media.html">Video library</a></li>
