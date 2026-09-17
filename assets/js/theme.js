@@ -7,20 +7,10 @@
 import { $, esc, toast } from './site.js';
 import { THEME_META } from './theme-meta.js';
 
-export const THEME_KEY = 'bcfg.theme';
-export const DEFAULT_THEME = THEME_META[0].id;
+const THEME_KEY = 'bcfg.theme';
+const DEFAULT_THEME = THEME_META[0].id;
 
-export const isTheme = (id) => THEME_META.some((t) => t.id === id);
-
-/** Head-script logic, factored out so it can be unit-checked. */
-export function resolveTheme(search, stored) {
-  try {
-    const q = new URLSearchParams(search || '').get('theme');
-    if (q && isTheme(q)) return q;
-    if (stored && isTheme(stored)) return stored;
-  } catch { /* private mode / file:// */ }
-  return DEFAULT_THEME;
-}
+const isTheme = (id) => THEME_META.some((t) => t.id === id);
 
 export function currentTheme() {
   const id = document.documentElement.dataset.theme;

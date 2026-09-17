@@ -571,29 +571,14 @@ const ICONS = {
   arrowRight: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
   arrowLeft: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>',
   chevronDown: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>',
-  chevronUp: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>',
   plus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>',
-  search: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>',
   check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>',
   download: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>',
-  trash: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V4.8A.8.8 0 0 1 9.8 4h4.4a.8.8 0 0 1 .8.8V7M6.5 7l.8 12.2a1 1 0 0 0 1 .8h7.4a1 1 0 0 0 1-.8L17.5 7"/></svg>',
-  upload: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"/></svg>',
   film: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M7 4v16M17 4v16M3 12h18M3 8h4M3 16h4M17 8h4M17 16h4"/></svg>',
-  volume: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6.5 8.7H3v6.6h3.5L11 19V5Z"/><path d="M15.4 8.6a4.8 4.8 0 0 1 0 6.8M18.2 5.8a8.8 8.8 0 0 1 0 12.4"/></svg>',
-  volumeMute: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6.5 8.7H3v6.6h3.5L11 19V5Z"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg>',
   expand: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 15v5h-5M20 9V4h-5M4 15v5h5"/></svg>',
   compress: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4v5H4M15 20v-5h5M15 4v5h5M9 20v-5H4"/></svg>',
-  pip: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><rect x="12" y="11" width="7.5" height="5.5" rx="1.4" fill="currentColor"/></svg>',
-  skipFwd: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 5.2v13.6a1 1 0 0 0 1.54.84L15 13.6V18a1 1 0 0 0 2 0V6a1 1 0 1 0-2 0v4.4L6.54 4.36A1 1 0 0 0 5 5.2Z"/></svg>',
-  skipBack: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 5.2v13.6a1 1 0 0 1-1.54.84L9 13.6V18a1 1 0 0 1-2 0V6a1 1 0 1 1 2 0v4.4l8.46-6.04A1 1 0 0 1 19 5.2Z"/></svg>',
   close: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>',
-  link: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13.5a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1.4 1.4"/><path d="M14 10.5a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1.4-1.4"/></svg>',
   doc: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h7l5 5v13H6z"/><path d="M13 3v5h5"/></svg>',
-  shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l7.5 3v6c0 4.6-3.1 7.9-7.5 9.4C7.6 19.9 4.5 16.6 4.5 12V6z"/><path d="M9 12l2 2 4-4"/></svg>',
-  chart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>',
-  users: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.4"/><path d="M2.8 20a6.2 6.2 0 0 1 12.4 0"/><path d="M16.5 5.3a3.2 3.2 0 0 1 0 6.2M18 20a5.8 5.8 0 0 0-2-4.4"/></svg>',
-  grid: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7.5" height="7.5" rx="1.6"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.6"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.6"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.6"/></svg>',
-  pauseCircle: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20ZM10 8.5v7a1 1 0 1 1-2 0v-7a1 1 0 1 1 2 0Zm6 0v7a1 1 0 1 1-2 0v-7a1 1 0 1 1 2 0Z"/></svg>',
 };
 
 /* ---------------------------------------------------------------- helpers */
@@ -603,14 +588,6 @@ const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 const esc = (s) =>
   String(s ?? '').replace(/[&<>"']/g, (c) =>
     ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-
-const fmtBytes = (b) => {
-  if (!b && b !== 0) return '—';
-  const u = ['B', 'KB', 'MB', 'GB'];
-  let i = 0, n = b;
-  while (n >= 1024 && i < u.length - 1) { n /= 1024; i++; }
-  return `${n < 10 && i > 0 ? n.toFixed(1) : Math.round(n)} ${u[i]}`;
-};
 
 const fmtTime = (s) => {
   if (!isFinite(s) || s < 0) s = 0;
@@ -624,8 +601,6 @@ const fmtTime = (s) => {
 
 const fmtDate = (ts) =>
   new Date(ts).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
-
-const uid = () => (crypto.randomUUID ? crypto.randomUUID() : `id-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`);
 
 const debounce = (fn, ms = 220) => {
   let t;
@@ -811,7 +786,7 @@ function lockScroll(on) {
   document.body.classList.toggle('no-scroll', on);
 }
 
-/** Deterministic gradient poster (used when a video thumbnail can't be decoded). */
+/** Deterministic gradient poster — fallback for media entries without a YouTube thumbnail. */
 function gradientPoster(seed, label = '') {
   let h = 0;
   for (let i = 0; i < String(seed).length; i++) h = (h * 31 + String(seed).charCodeAt(i)) % 360;
@@ -831,7 +806,7 @@ function gradientPoster(seed, label = '') {
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
 }
 
-return { ICONS, $, $$, esc, fmtBytes, fmtTime, fmtDate, uid, debounce, prefersReduced, toast, mountChrome, initReveal, countUp, initCounters, lockScroll, gradientPoster };
+return { ICONS, $, $$, esc, fmtTime, fmtDate, debounce, prefersReduced, toast, mountChrome, initReveal, countUp, initCounters, lockScroll, gradientPoster };
 });
 
 __def("theme", function () {
@@ -847,16 +822,6 @@ const THEME_KEY = 'bcfg.theme';
 const DEFAULT_THEME = THEME_META[0].id;
 
 const isTheme = (id) => THEME_META.some((t) => t.id === id);
-
-/** Head-script logic, factored out so it can be unit-checked. */
-function resolveTheme(search, stored) {
-  try {
-    const q = new URLSearchParams(search || '').get('theme');
-    if (q && isTheme(q)) return q;
-    if (stored && isTheme(stored)) return stored;
-  } catch { /* private mode / file:// */ }
-  return DEFAULT_THEME;
-}
 
 function currentTheme() {
   const id = document.documentElement.dataset.theme;
@@ -939,7 +904,7 @@ function mountThemeDock() {
   });
 }
 
-return { THEME_KEY, DEFAULT_THEME, isTheme, resolveTheme, currentTheme, applyTheme, mountThemeDock };
+return { currentTheme, applyTheme, mountThemeDock };
 });
 
 __def("pdf", function () {
@@ -1599,6 +1564,8 @@ const state = { filtered: [], query: '', tag: 'All', sort: 'newest' };
 /* ------------------------------------------------------------ media utils */
 const ytThumb = (id) => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
 const isYouTube = (m) => !!(m && m.platform === 'youtube' && m.youtubeId);
+/* Thumbnail for a media card: YouTube gets its CDN image; anything else
+   falls back to a provided `thumb`, then to a generated gradient poster. */
 function thumbFor(m) {
   if (isYouTube(m)) return ytThumb(m.youtubeId);
   if (m.thumb) return m.thumb;
@@ -1610,7 +1577,6 @@ function thumbFor(m) {
 function library() {
   return SAMPLE_MEDIA.map((s) => ({
     ...s,
-    label: 'YouTube',
     ts: new Date(s.published || Date.now()).getTime(),
   }));
 }
@@ -1887,7 +1853,7 @@ __def("resources", function () {
    · Document downloads are GENERATED in the browser (real PDF / CSV / DOC)
    ========================================================================== */
 
-const {ICONS, $, $$, esc, debounce, toast, initReveal, lockScroll, mountChrome} = __req('site');
+const {ICONS, $, esc, debounce, toast, initReveal, lockScroll, mountChrome} = __req('site');
 const {mountThemeDock} = __req('theme');
 const {PROGRAMS, CATEGORIES, AUDIENCES, BRAND} = __req('data');
 const {buildPdf, buildCsv, downloadBlob, programFactSheet} = __req('pdf');
@@ -2207,6 +2173,7 @@ function downloadDoc(p, i) {
     if (doc.type === 'pdf') downloadBlob(docAsPdf(p, doc), `${base}.pdf`);
     else if (doc.type === 'xls') downloadBlob(docAsCsv(p, doc), `${base}.csv`);
     else if (doc.type === 'doc') downloadBlob(docAsWord(p, doc), `${base}.doc`);
+    // Fallback for an unrecognised doc.type — export as plain text rather than fail silently.
     else downloadBlob(new Blob([docAsText(p, doc)], { type: 'text/plain' }), `${base}.txt`);
     toast('Document generated', `${doc.name} — built in your browser.`);
   } catch (err) {
@@ -2434,7 +2401,6 @@ __def("gallery", function () {
 const {$, $$, esc, toast, mountChrome} = __req('site');
 const {THEME_META} = __req('theme-meta');
 const {applyTheme, currentTheme, mountThemeDock} = __req('theme');
-const {FIRM} = __req('data');
 const PREVIEW_W = 1440;
 const PREVIEW_H = 980;
 

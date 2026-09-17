@@ -77,6 +77,7 @@ export const POSTS = [
     tag: 'Market Update',
     author: 'Investment Committee',
     read: '6 min',
+    excerpt: 'Two exits, one new position, and why we trimmed the alternatives sleeve.',
     body: `
       <p>Two exits, one new position, and why we trimmed the alternatives sleeve.</p>
       <h3>The exits</h3>
@@ -118,7 +119,7 @@ const renderCard = (p) => `
     <p class="eyebrow">${esc(p.tag)} · ${fmt(p.date)}</p>
     <h2 style="font-size:clamp(22px,2.6vw,30px);margin:10px 0 8px">
       <a href="blog.html?post=${encodeURIComponent(p.id)}">${esc(p.title)}</a></h2>
-    <p class="lede">${p.body.split('</p>')[0].replace(/<[^>]+>/g, '').slice(0, 180)}…</p>
+    <p class="lede">${esc(p.excerpt)}</p>
     <p class="tiny muted">${esc(p.author)} · ${esc(p.read)} read</p>
   </article>`;
 

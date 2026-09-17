@@ -203,20 +203,10 @@ function derive(t) {
     '--paper': t.surfaces.paper,
     '--paper-2': t.surfaces.paper2,
     '--surface': t.surfaces.surface,
-    '--surface-2': light ? mix(t.surfaces.paper2, '#000000', 0.03) : mix(t.surfaces.surface, '#FFFFFF', 0.05),
     '--hero-base': t.surfaces.hero,
-    '--navy-950': t.surfaces.hero,
-    '--navy-900': t.surfaces.band,
-    '--navy-800': light ? mix(t.surfaces.band, '#FFFFFF', 0.10) : mix(t.surfaces.band, '#FFFFFF', 0.08),
-    '--navy-700': light ? mix(t.surfaces.band, '#FFFFFF', 0.22) : mix(t.surfaces.band, '#FFFFFF', 0.18),
-    '--navy-600': light ? mix(t.accent.fill, t.surfaces.band, 0.45) : mix(t.accent.fill, t.surfaces.band, 0.55),
-    '--navy-400': light ? mix(t.accent.fill, t.surfaces.band, 0.7) : mix(t.accent.fill, t.surfaces.band, 0.4),
     '--band-bg': t.surfaces.band,
     '--footer-bg': t.surfaces.footer,
     '--toast-bg': light ? mix(t.surfaces.band, '#000000', 0.1) : '#1B2432',
-    '--dropzone-bg': light
-      ? `linear-gradient(180deg, ${rgba('#FFFFFF', 0.75)}, ${rgba('#FFFFFF', 0.35)})`
-      : `linear-gradient(180deg, ${rgba('#FFFFFF', 0.045)}, ${rgba('#FFFFFF', 0.015)})`,
     '--wash': `linear-gradient(180deg, ${rgba(t.surfaces.paper2, light ? 0.7 : 0.5)}, transparent)`,
 
     // text
@@ -236,10 +226,6 @@ function derive(t) {
     '--accent-on-dark': accentOnDark,
     '--accent-glow': rgba(t.accent.fill, 0.4),
     '--accent-rgb': hex2rgb(t.accent.fill).map((v) => Math.round(v * 255)).join(', '),
-    '--brass-500': accentText,
-    '--brass-400': t.accent.fill,
-    '--brass-300': accentOnDark,
-    '--brass-050': accentSoft,
 
     // controls
     '--btn-bg': light ? inkStrong : '#E9EEF6',
@@ -260,7 +246,6 @@ function derive(t) {
     '--ok-soft': light ? 'rgba(31, 122, 92, 0.10)' : 'rgba(74, 222, 155, 0.14)',
     '--warn': light ? '#8A4F16' : '#F0B24A',
     '--warn-soft': light ? 'rgba(176, 102, 42, 0.10)' : 'rgba(240, 178, 74, 0.14)',
-    '--danger': light ? '#B03A3A' : '#FF8A8A',
 
     // chrome
     '--header-bg': light ? rgba(t.surfaces.paper, 0.86) : rgba(t.surfaces.paper, 0.82),

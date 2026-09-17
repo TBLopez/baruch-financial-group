@@ -18,6 +18,8 @@ const state = { filtered: [], query: '', tag: 'All', sort: 'newest' };
 /* ------------------------------------------------------------ media utils */
 const ytThumb = (id) => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
 const isYouTube = (m) => !!(m && m.platform === 'youtube' && m.youtubeId);
+/* Thumbnail for a media card: YouTube gets its CDN image; anything else
+   falls back to a provided `thumb`, then to a generated gradient poster. */
 function thumbFor(m) {
   if (isYouTube(m)) return ytThumb(m.youtubeId);
   if (m.thumb) return m.thumb;
@@ -29,7 +31,6 @@ function thumbFor(m) {
 function library() {
   return SAMPLE_MEDIA.map((s) => ({
     ...s,
-    label: 'YouTube',
     ts: new Date(s.published || Date.now()).getTime(),
   }));
 }

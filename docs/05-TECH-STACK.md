@@ -16,10 +16,10 @@ specification the code is trying to live up to.
 | Layer | Technology | Notes |
 |---|---|---|
 | **Markup** | HTML5, hand-written | 5 pages: `index.html`, `media.html`, `resources.html`, `themes.html`, `404.html`. Semantic elements (`header`, `main`, `section`, `article`, `nav`), ARIA roles on the carousel, tabs, accordion, player and modal, `lang="en"`, skip links |
-| **Styling** | Plain CSS3, no preprocessor, no framework | 2 files. 1,141 lines of hand-written structure (`assets/css/styles.css`) + 587 lines of **generated** palettes (`assets/css/themes.css`). Design tokens as CSS custom properties; `clamp()` for fluid type; 6 breakpoints + a `print` block + a `prefers-reduced-motion` block |
-| **Scripting** | ES2020+ JavaScript, hand-written ES modules | 8 modules, ~2,430 lines. No React/Vue/Svelte/jQuery, no TypeScript, no state library. `IntersectionObserver`, `URLSearchParams`, `history.replaceState`, `localStorage`, `matchMedia`, `Blob` + `URL.createObjectURL`, `requestFullscreen`, `requestAnimationFrame`, `crypto.randomUUID` |
+| **Styling** | Plain CSS3, no preprocessor, no framework | 2 files. 1,032 lines of hand-written structure (`assets/css/styles.css`) + 502 lines of **generated** palettes (`assets/css/themes.css`). Design tokens as CSS custom properties; `clamp()` for fluid type; 6 breakpoints + a `print` block + a `prefers-reduced-motion` block |
+| **Scripting** | ES2020+ JavaScript, hand-written ES modules | 8 modules, ~2,400 lines. No React/Vue/Svelte/jQuery, no TypeScript, no state library. `IntersectionObserver`, `URLSearchParams`, `history.replaceState`, `localStorage`, `matchMedia`, `Blob` + `URL.createObjectURL`, `requestFullscreen`, `requestAnimationFrame`, `crypto.randomUUID` |
 | **Bundling** | A **custom 75-line Node script** (`build.js`) | Merges the 8 modules into one classic script (`assets/js/bundle.js`). No webpack/Vite/Rollup/esbuild. Exists for one reason: browsers block ES module imports on `file://`, and this keeps the site double-clickable |
-| **Theme engine** | A **custom 415-line Node script** (`tools/build-themes.mjs`) | Generates the five palettes and contrast-checks every text/background pair against WCAG AA before writing anything |
+| **Theme engine** | A **custom ~400-line Node script** (`tools/build-themes.mjs`) | Generates the five palettes and contrast-checks every text/background pair against WCAG AA before writing anything |
 | **Document generation** | A **hand-written PDF writer** (`assets/js/pdf.js`, 354 lines) | Base-14 Helvetica metrics, word wrap, multi-page layout, correct cross-reference table. Also emits CSV and Word-compatible `.doc` HTML. No jsPDF, no pdf-lib |
 | **Media** | YouTube embeds | Privacy-enhanced `youtube-nocookie.com` iframes, created on click (nothing loads from YouTube until a visitor presses play); thumbnails from `i.ytimg.com`. These are the **only** external network requests the site makes |
 | **Fonts** | System font stacks | `-apple-system`, `Segoe UI`, `Roboto`, `Georgia`, `Iowan Old Style`, etc. **No webfonts, no Google Fonts** — zero render-blocking type requests, and the site renders identically offline |
@@ -116,11 +116,11 @@ paints in the right style from the first frame (no flash of the wrong theme). Ev
 
 | | |
 |---|---|
-| Published payload | **408 kB across 28 files** (everything except `previews/`, `docs/` and `.git`) |
-| Largest single file | `assets/js/bundle.js` — 100 kB raw, **29 kB gzipped** (unminified on purpose, so it stays readable) |
-| CSS | 50 kB + 16 kB raw → **14 kB gzipped** |
+| Published payload | **392 kB across 28 files** (everything except `previews/`, `docs/` and `.git`) |
+| Largest single file | `assets/js/bundle.js` — 96 kB raw, **28 kB gzipped** (unminified on purpose, so it stays readable) |
+| CSS | 45 kB + 14 kB raw → **13 kB gzipped** |
 | Home page HTML | 10 kB raw → 3 kB gzipped |
-| Whole published site, gzipped | **≈ 178 kB** |
+| Whole published site, gzipped | **≈ 174 kB** |
 | Third-party requests | 0 until someone presses play on a video |
 | Cookies | none |
 | Analytics | none |
@@ -152,7 +152,7 @@ no Tailwind, Bootstrap, Bulma or Sass/Less; no jQuery, Lodash, Axios or Alpine; 
 no webpack, Vite, Rollup, Parcel or esbuild; no WordPress; no CMS; no CSS-in-JS; no Google
 Fonts; no analytics; no jQuery-era polyfills; no Docker; no CI required to deploy.
 
-None of that is a criticism of those tools — it is the reason this site is 178 kB, costs
+None of that is a criticism of those tools — it is the reason this site is 174 kB, costs
 nothing to host, has nothing to patch, and can be handed to a sophomore who knows HTML.
 
 ---

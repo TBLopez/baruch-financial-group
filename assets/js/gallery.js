@@ -7,7 +7,6 @@
 import { $, $$, esc, toast, mountChrome } from './site.js';
 import { THEME_META } from './theme-meta.js';
 import { applyTheme, currentTheme, mountThemeDock } from './theme.js';
-import { FIRM } from './data.js';
 
 const PREVIEW_W = 1440;
 const PREVIEW_H = 980;

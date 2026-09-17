@@ -6,7 +6,7 @@
    ========================================================================== */
 
 import {
-  ICONS, $, $$, esc, debounce, toast, initReveal, lockScroll, mountChrome,
+  ICONS, $, esc, debounce, toast, initReveal, lockScroll, mountChrome,
 } from './site.js';
 import { mountThemeDock } from './theme.js';
 import { PROGRAMS, CATEGORIES, AUDIENCES, BRAND } from './data.js';
@@ -328,6 +328,7 @@ function downloadDoc(p, i) {
     if (doc.type === 'pdf') downloadBlob(docAsPdf(p, doc), `${base}.pdf`);
     else if (doc.type === 'xls') downloadBlob(docAsCsv(p, doc), `${base}.csv`);
     else if (doc.type === 'doc') downloadBlob(docAsWord(p, doc), `${base}.doc`);
+    // Fallback for an unrecognised doc.type — export as plain text rather than fail silently.
     else downloadBlob(new Blob([docAsText(p, doc)], { type: 'text/plain' }), `${base}.txt`);
     toast('Document generated', `${doc.name} — built in your browser.`);
   } catch (err) {
