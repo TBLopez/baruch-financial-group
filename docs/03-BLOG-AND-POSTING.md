@@ -330,7 +330,7 @@ Readers and newsletters need a feed. Append to `tools/build-blog.mjs`: build `fe
 drafts, scheduled posts, syntax-highlighted code blocks, image optimisation.
 
 **Astro** is the closest fit to what is here: it is HTML-first, ships zero JavaScript by
-default, and pages are plain `.astro`/`.html`/`.md` files, so the existing four pages can move
+default, and pages are plain `.astro`/`.html`/`.md` files, so the existing pages can move
 almost as-is.
 
 ```bash
@@ -339,7 +339,7 @@ npm create astro@latest bcfg-astro     # "Empty project", TypeScript: no
 cd bcfg-astro
 mkdir -p public
 cp -R ../Baruch-Financial-Group/{assets,favicon.ico,*.html,404.html,robots.txt,sitemap.xml,.nojekyll} public/
-# move the four pages into src/pages/ once you want Astro to own their <head>
+# move the existing pages into src/pages/ once you want Astro to own their <head>
 ```
 
 Blog posts then live in `src/content/blog/*.md` with a small schema, and

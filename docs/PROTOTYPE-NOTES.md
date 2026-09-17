@@ -1,5 +1,9 @@
 # Baruch College Financial Group — prototype site
 
+> **Note:** these are the *original* build notes. The project has since gained an Events
+> calendar tab (`events.html`) and a "Member of the Week" carousel slide. See `README.md` and
+> `docs/05-TECH-STACK.md` for the current inventory.
+
 A local, interactive proof of concept for a student-run college financial group, built around the
 three features that were asked for, plus **five switchable visual styles** so a direction can be chosen.
 

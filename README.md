@@ -60,7 +60,8 @@ Baruch-Financial-Group/
 │   ├── 06-TROUBLESHOOTING.md
 │   └── PROTOTYPE-NOTES.md
 │
-├── index.html                 home — 3-section hero carousel
+├── index.html                 home — 4-section hero carousel (incl. Member of the Week)
+├── events.html                events calendar (styled like Resources)
 ├── media.html                 media library + inline YouTube player
 ├── resources.html             the 8 programmes, filters, document generation
 ├── themes.html                side-by-side comparison of the 5 visual styles
@@ -87,9 +88,11 @@ Baruch-Financial-Group/
     │   ├── home.js            carousel + home sections
     │   ├── media.js           media library, filters, inline player
     │   ├── resources.js       programme filters, accordion, document generation
+    │   ├── events.js          events calendar, filters, date cards
     │   ├── gallery.js         the themes.html comparison page
     │   └── bundle.js          AUTO-GENERATED — what the pages actually load
     ├── favicon.svg
+    ├── member-jordan.svg      Member of the Week portrait placeholder
     └── og.jpg                 social preview image
 ```
 

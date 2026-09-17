@@ -11,7 +11,7 @@ here is content, ownership and the domain — not code.
 | When | Task | Effort |
 |---|---|---|
 | **Weekly (term time)** | Publish or schedule one post/announcement. Reply to emails sent to the site address. | 20 min |
-| **Monthly** | Add the month's session recordings to `SAMPLE_MEDIA` (`youtubeId` values), `node build.js`, commit, push. Open the site on a real phone and click through the four pages. | 20 min |
+| **Monthly** | Add the month's session recordings to `SAMPLE_MEDIA` (`youtubeId` values), `node build.js`, commit, push. Open the site on a real phone and click through the five pages. | 20 min |
 | **Per semester** | Update `FIRM` numbers (members, fund size, alumni), refresh the programme dates in `PROGRAMS` (cohorts, deadlines, rooms), archive anything that has ended. Rebuild + push. | 1–2 hours |
 | **Quarterly** | Fund update post. Check the analytics and the uptime monitor. Re-read the claims on the home page and make sure every figure is still true. | 1 hour |
 | **Annually (do it in one sitting)** | Handover: add the new officers to GitHub/registrar/DNS/YouTube/email, remove the graduated ones, confirm the domain renews, re-verify every number and name on the site. | 2–3 hours |
@@ -193,7 +193,7 @@ Everything else is fine, but these four things will eventually bite, in this ord
    and see `docs/01-GO-LIVE.md` §7.
 4. **The `node build.js` step being forgotten** by a new maintainer, so edits silently do not
    appear. Fix: the rebuild rule is stated at the top of `README.md`, `docs/02-EDITING.md` and
-   the comment above the `<script>` tag in all four pages. If it keeps happening, switch to
+   the comment above the `<script>` tag in all five pages. If it keeps happening, switch to
    `Option D` in `docs/03-BLOG-AND-POSTING.md`, where a real build tool owns that step.
 
 ---

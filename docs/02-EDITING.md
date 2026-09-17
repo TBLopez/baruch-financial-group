@@ -42,9 +42,11 @@ without opening anything else.
 | `FIRM` | Group name, short name, school, tagline, founded year, fund size, member count, alumni count, placement %, partner-firm count | Header, footer, home "at a glance" band, generated PDFs |
 | `BRAND` | Organisation string + contact line used in document headers/footers | Every generated PDF / CSV / Word file |
 | `AUM_BREAKDOWN` | The three allocation rows in the "fund at a glance" band | `index.html` |
-| `SLIDES` | The three hero carousel sections — eyebrow, nav label, headline (HTML allowed, `<em>` for italics), lede, two CTA buttons, the art class, and the three count-up figures | `index.html` carousel |
+| `SLIDES` | The four hero carousel sections (Learn / Invest / Launch / Member of the Week) — eyebrow, nav label, headline (HTML allowed, `<em>` for italics), lede, two CTA buttons, the art class, and (except the member slide) three count-up figures | `index.html` carousel |
 | `PROGRAMS` | The eight programme cards: id, title, category, audience, status, summary, fee, minimum, horizon, highlights, timeline, documents, FAQs, video tag. `featured: true` pins it to the home page | `resources.html` + home |
 | `SAMPLE_MEDIA` | The six sessions: id, title, tag, kind, duration (seconds), published date, author, platform, `youtubeId`, description | `media.html` |
+| `EVENTS` | The calendar: title, ISO date, time, location, audience and description. Upcoming/past is derived from the date | `events.html` |
+| `EVENT_CATEGORIES` | The filter chips for the Events tab | `events.html` |
 | `INSIGHTS` | The three-item "research rail" on the home page: kicker, title, blurb, read time, tag | `index.html` |
 
 Also in the file: `CATEGORIES` and `AUDIENCES` — the filter chip lists. Add a programme with a
@@ -246,7 +248,7 @@ git status                                      # did you forget to add a file?
 git diff --stat
 ```
 
-Then open the four pages at three widths in the browser (a narrow window, a tablet-ish one,
+Then open the five pages at three widths in the browser (a narrow window, a tablet-ish one,
 and full width) and check the console for errors — `Cmd+Option+J` in Chrome, `Cmd+Option+C`
 in Safari. The build already passed 60 automated renders across 5 styles × 3 widths with zero
 contrast failures and zero JS errors, so any new error is almost certainly from your edit.
