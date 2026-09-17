@@ -1,12 +1,12 @@
 /* ==========================================================================
    data.js — local content model (no network, file:// safe)
    All copy for the site lives here. Swap these values to re-skin the whole
-   prototype for a different organisation.
+   prototype for a different organization.
 
    Structure mirrors the three reference sites:
      · NB.com      → 3-section hero carousel + "at a glance" figure band
      · Aptus ETFs  → dated Media entries with embedded players
-     · Aptus Fin.  → programme cards with full detail + downloadable documents
+     · Aptus Fin.  → program cards with full detail + downloadable documents
      · Amara       → warm editorial voice, figures that count up
    ========================================================================== */
 
@@ -16,12 +16,12 @@ export const FIRM = {
   school: 'Baruch College',
   tagline: 'Learn the markets. Run real money. Graduate ready.',
   founded: 2009,
-  fund: 2.4,              // student-managed fund, $ millions
+  fund: 200,              // student-managed fund, $ thousands
   fundAsOf: 'Fall 2026',
-  members: 240,
-  alumni: 1900,
-  placement: 94,          // % of seniors with a finance offer at graduation
-  partnerFirms: 61,
+  members: 150,
+  alumni: 600,
+  placement: 88,          // % of graduating members with a finance offer
+  partnerFirms: 30,
 };
 
 /* Used in the generated PDFs/CSV/DOC headers and footers. */
@@ -33,13 +33,13 @@ export const BRAND = {
 
 /* Where the student-managed fund is allocated — the "at a glance" band. */
 export const AUM_BREAKDOWN = [
-  { label: 'Equities', value: 1.35, unit: 'M', note: 'Core, dividend and small-cap sleeves' },
-  { label: 'Fixed income', value: 620, unit: 'K', note: 'Treasury ladder and short-duration credit' },
-  { label: 'Alternatives', value: 430, unit: 'K', note: 'REITs, commodities and a satellite sleeve' },
+  { label: 'Equities', value: 120, unit: 'K', note: 'Core and dividend sleeves' },
+  { label: 'Fixed income', value: 50, unit: 'K', note: 'Treasury ladder and short-duration credit' },
+  { label: 'Alternatives', value: 30, unit: 'K', note: 'REITs and a satellite sleeve' },
 ];
 
 /* --------------------------------------------------------- hero carousel
-   Three sections — the front-page carousel the brief asked for.           */
+   Four sections — the front-page carousel the brief asked for.           */
 export const SLIDES = [
   {
     id: 'learn',
@@ -50,14 +50,14 @@ export const SLIDES = [
     lede:
       'Eight-week analyst training, weekly workshops and certification prep — taught by upperclassmen and alumni, not by a textbook. Open to every major, no application, no fee.',
     ctas: [
-      { label: 'See the training programme', href: 'resources.html?id=analyst-training', style: 'brass' },
+      { label: 'See the training program', href: 'resources.html?id=analyst-training', style: 'brass' },
       { label: 'Watch a workshop', href: 'media.html?tag=Workshop', style: 'ghost-inv' },
     ],
     art: 'art-a',
     cards: [
-      { label: 'Workshops per semester', value: '24', suffix: '' },
-      { label: 'Members trained in 2025–26', value: '240', suffix: '' },
-      { label: 'Certification pass rate', value: '92', suffix: '%' },
+      { label: 'Workshops per semester', value: '12', suffix: '' },
+      { label: 'Members trained in 2025–26', value: '120', suffix: '' },
+      { label: 'Certification pass rate', value: '90', suffix: '%' },
     ],
     cardFoot: 'Figures from the group’s 2025–26 annual report.',
   },
@@ -68,18 +68,18 @@ export const SLIDES = [
     navSub: 'The student-managed fund',
     title: 'Real capital. Real mandate. Real <em>accountability</em>.',
     lede:
-      'A $2.4M allocation from the endowment, managed entirely by students. Every position needs a written thesis, a risk case and a committee vote — and the portfolio is reported to the trustees each semester.',
+      'A $200K portfolio funded by alumni, managed entirely by students. Every position needs a written thesis, a risk case and a committee vote — and the portfolio is reviewed with the alumni board each semester.',
     ctas: [
       { label: 'How the fund works', href: 'resources.html?id=student-fund', style: 'brass' },
       { label: 'Read the research', href: 'media.html?tag=Market+Update', style: 'ghost-inv' },
     ],
     art: 'art-b',
     cards: [
-      { label: 'Student-managed allocation', value: '2.4', suffix: 'M' },
-      { label: 'Analysts this year', value: '18', suffix: '' },
-      { label: 'Positions under coverage', value: '46', suffix: '' },
+      { label: 'Student-managed fund', value: '200', suffix: 'K' },
+      { label: 'Analysts this year', value: '12', suffix: '' },
+      { label: 'Positions under coverage', value: '24', suffix: '' },
     ],
-    cardFoot: 'Endowment allocation as of Fall 2026. Past performance is not indicative.',
+    cardFoot: 'Alumni-funded portfolio as of Fall 2026. Past performance is not indicative.',
   },
   {
     id: 'launch',
@@ -88,18 +88,18 @@ export const SLIDES = [
     navSub: 'Careers, mentors, alumni',
     title: 'Graduate with a track record, not just a <em>transcript</em>.',
     lede:
-      'Ninety-four percent of our seniors hold a finance offer at graduation. Alumni mentors, mock interviews, resume reviews and a case-competition team that travels — the network starts the day you join.',
+      'Eighty-eight percent of our graduating members hold a finance offer at graduation. Alumni mentors, mock interviews, resume reviews and a case-competition team that travels — the network starts the day you join.',
     ctas: [
-      { label: 'Mentorship programme', href: 'resources.html?id=mentorship', style: 'brass' },
+      { label: 'Mentorship program', href: 'resources.html?id=mentorship', style: 'brass' },
       { label: 'Alumni panel recordings', href: 'media.html?tag=Careers', style: 'ghost-inv' },
     ],
     art: 'art-c',
     cards: [
-      { label: 'Alumni network', value: '1,900', suffix: '' },
-      { label: 'Seniors placed at graduation', value: '94', suffix: '%' },
-      { label: 'Partner firms', value: '61', suffix: '' },
+      { label: 'Alumni network', value: '600', suffix: '' },
+      { label: 'Graduating members placed', value: '88', suffix: '%' },
+      { label: 'Recruiting partners', value: '30', suffix: '' },
     ],
-    cardFoot: 'Class of 2026 outcomes survey, 71 respondents.',
+    cardFoot: 'Class of 2026 outcomes survey, 61 respondents.',
   },
   {
     id: 'member',
@@ -134,18 +134,18 @@ export const AUDIENCES = ['First-years', 'Sophomores', 'Juniors', 'Seniors', 'Al
 export const PROGRAMS = [
   {
     id: 'analyst-training',
-    title: 'Analyst Training Programme',
+    title: 'Analyst Training Program',
     category: 'Education',
     audience: 'First-years',
     status: 'Open',
     featured: true,
     summary:
-      'An eight-week autumn programme that takes you from “what is a bond” to building a three-statement model. No application, no dues, no prior finance coursework.',
+      'An eight-week autumn program that takes you from “what is a bond” to building a three-statement model. No application, no dues, no prior finance coursework.',
     fee: 'Free',
     minimum: 'None',
     horizon: '8 weeks (Sept–Nov)',
     highlights: [
-      'Three-statement modelling, DCF and comparable-company analysis',
+      'Three-statement modeling, DCF and comparable-company analysis',
       'Weekly problem sets marked by upperclassmen with written feedback',
       'Bloomberg terminal certification built into week six',
       'Direct feeder into the student-managed fund and pitch competition',
@@ -162,7 +162,7 @@ export const PROGRAMS = [
       { name: 'Problem set answer key (instructors)', type: 'xls' },
     ],
     faqs: [
-      { q: 'Do I need to be a finance major?', a: 'No. Roughly 40% of each cohort comes from economics, computer science, engineering or the sciences. The programme assumes no prior finance coursework.' },
+      { q: 'Do I need to be a finance major?', a: 'No. Roughly 40% of each cohort comes from economics, computer science, engineering or the sciences. The program assumes no prior finance coursework.' },
       { q: 'What is the time commitment?', a: 'One 90-minute session per week plus about two hours of problem sets. Weeks three and seven run longer.' },
       { q: 'Does it cost anything?', a: 'No. Materials and the Bloomberg certification fee are covered by the group’s alumni fund.' },
     ],
@@ -176,20 +176,20 @@ export const PROGRAMS = [
     status: 'Enrolling',
     featured: true,
     summary:
-      'The flagship programme: a $2.4M endowment allocation managed by students across three sleeves, with a written investment process and semesterly reporting to the trustees.',
+      'The flagship program: a $200K alumni-funded portfolio managed by students across three sleeves, with a written investment process and a review with the alumni board each semester.',
     fee: 'Free (stipend eligible)',
-    minimum: 'Training programme completed',
+    minimum: 'Training program completed',
     horizon: '2 semesters',
     highlights: [
       'Sector coverage assigned for a full academic year — you own your names',
       'Every position requires a written thesis, risk case and committee vote',
-      'Live portfolio reporting to the endowment trustees each semester',
+      'Portfolio reviewed with the alumni board each semester',
       'Stipend for the two portfolio managers and the risk officer',
     ],
     timeline: [
       { when: 'Sept', what: 'Applications, interviews and sector assignments' },
       { when: 'Oct–Nov', what: 'Coverage build-out and first pitches' },
-      { when: 'Dec', what: 'Semester review with the trustees' },
+      { when: 'Dec', what: 'Semester review with the alumni board' },
       { when: 'Feb–Apr', what: 'Rebalance, second cycle of pitches' },
     ],
     documents: [
@@ -198,8 +198,8 @@ export const PROGRAMS = [
       { name: 'Sector coverage tracker', type: 'xls' },
     ],
     faqs: [
-      { q: 'How many analysts are taken each year?', a: 'Eighteen, split across the three sleeves. Applications open the first week of September.' },
-      { q: 'Do students actually make the trades?', a: 'Yes. Trades settle through the college’s custodian on the committee’s authorisation; no faculty member can override a vote.' },
+      { q: 'How many analysts are taken each year?', a: 'Twelve, split across the three sleeves. Applications open the first week of September.' },
+      { q: 'Do students actually make the trades?', a: 'Yes. Trades are executed through the group’s brokerage account on committee authorization; no single officer can override a vote.' },
       { q: 'Is there a minimum GPA?', a: 'A 3.0 cumulative. We weight the written pitch more heavily than the transcript.' },
     ],
     video: 'Market Update',
@@ -219,7 +219,7 @@ export const PROGRAMS = [
     highlights: [
       'Open to all majors and all years — no membership required',
       'Judged by alumni from research, asset management and hedge funds',
-      '$2,500 prize pool plus a guaranteed fund interview for finalists',
+      '$1,000 prize pool plus a guaranteed fund interview for finalists',
       'Written feedback on every submission that clears the first round',
     ],
     timeline: [
@@ -231,7 +231,7 @@ export const PROGRAMS = [
     documents: [
       { name: 'Competition rules and judging rubric', type: 'pdf' },
       { name: 'Pitch deck template', type: 'doc' },
-      { name: '2025 winning thesis — anonymised', type: 'pdf' },
+      { name: '2025 winning thesis — anonymized', type: 'pdf' },
     ],
     faqs: [
       { q: 'Can I enter as a team?', a: 'Teams of up to three, or solo. Teams of three must split the written submission into clearly attributed sections.' },
@@ -241,7 +241,7 @@ export const PROGRAMS = [
   },
   {
     id: 'mentorship',
-    title: 'Alumni Mentorship Programme',
+    title: 'Alumni Mentorship Program',
     category: 'Careers',
     audience: 'Sophomores',
     status: 'Enrolling',
@@ -260,7 +260,7 @@ export const PROGRAMS = [
       { when: 'Sept', what: 'Mentee applications and interest survey' },
       { when: 'Oct', what: 'Matching and introductions' },
       { when: 'Nov–Apr', what: 'Six structured conversations' },
-      { when: 'May', what: 'Programme review and re-matching' },
+      { when: 'May', what: 'Program review and re-matching' },
     ],
     documents: [
       { name: 'Mentorship handbook and conversation guide', type: 'pdf' },
@@ -268,8 +268,8 @@ export const PROGRAMS = [
       { name: 'Mock interview question bank', type: 'pdf' },
     ],
     faqs: [
-      { q: 'What if my mentor and I do not click?', a: 'Tell the programme lead. Re-matching is routine and never held against you.' },
-      { q: 'Can I be a mentor as an alumnus?', a: 'Yes — we need about 120 mentors a year and usually recruit 150 alumni across five sectors.' },
+      { q: 'What if my mentor and I do not click?', a: 'Tell the program lead. Re-matching is routine and never held against you.' },
+      { q: 'Can I be a mentor as an alumnus?', a: 'Yes — we need about 40 mentors a year and usually recruit 60 alumni across five sectors.' },
     ],
     video: 'Careers',
   },
@@ -280,8 +280,8 @@ export const PROGRAMS = [
     audience: 'All members',
     status: 'Open',
     summary:
-      'Subsidised Bloomberg Market Concepts certification and a CFA Level I study group running weekly from February, with the mock exam series and registration fees covered.',
-    fee: 'Subsidised (32% of cost)',
+      'Subsidized Bloomberg Market Concepts certification and a CFA Level I study group running weekly from February, with the mock exam series and registration fees covered.',
+    fee: 'Subsidized (50% of cost)',
     minimum: 'Active membership',
     horizon: 'Semester-long',
     highlights: [
@@ -291,7 +291,7 @@ export const PROGRAMS = [
       'Ethics and quant study groups led by members who have already passed',
     ],
     timeline: [
-      { when: 'Jan', what: 'Enrolment and diagnostic assessment' },
+      { when: 'Jan', what: 'Enrollment and diagnostic assessment' },
       { when: 'Feb–Apr', what: 'Weekly study group and mocks' },
       { when: 'May', what: 'Exam window and results review' },
     ],
@@ -300,7 +300,7 @@ export const PROGRAMS = [
       { name: 'Mock exam score tracker', type: 'xls' },
     ],
     faqs: [
-      { q: 'Is the CFA reimbursement conditional?', a: 'Yes — you are reimbursed 40% on registering and a further 60% when you pass Level I.' },
+      { q: 'Is the CFA reimbursement conditional?', a: 'Yes — you are reimbursed half the fee on registering and the remainder when you pass Level I.' },
     ],
     video: 'Workshop',
   },
@@ -316,9 +316,9 @@ export const PROGRAMS = [
     minimum: 'None',
     horizon: 'Rolling, ~2 hrs/month',
     highlights: [
-      'Four partner high schools, roughly 600 students reached each year',
+      'Four partner high schools, roughly 300 students reached each year',
       'Ready-made lesson plans — no preparation required from volunteers',
-      'Campus tax clinic files about 300 returns each season',
+      'Campus tax clinic files about 150 returns each season',
       'Counts toward the college’s community engagement certificate',
     ],
     timeline: [
@@ -351,7 +351,7 @@ export const PROGRAMS = [
       'Six speaker events a year with women in senior finance roles',
       'Peer circles capped at eight so every voice is heard',
       'Interview prep targeted at the firms where members are actually recruiting',
-      'Alumni sponsor pool of 40+ across banking, markets and asset management',
+      'Alumni sponsor pool of 20+ across banking, markets and asset management',
     ],
     timeline: [
       { when: 'Sept', what: 'Kick-off and peer circle matching' },
@@ -359,7 +359,7 @@ export const PROGRAMS = [
       { when: 'May', what: 'End-of-year networking dinner' },
     ],
     documents: [
-      { name: 'Programme overview and speaker archive', type: 'pdf' },
+      { name: 'Program overview and speaker archive', type: 'pdf' },
       { name: 'Recruiting timeline by firm type', type: 'pdf' },
     ],
     faqs: [
@@ -374,7 +374,7 @@ export const PROGRAMS = [
     audience: 'Juniors',
     status: 'Pilot',
     summary:
-      'The travelling team: four members selected by tryout to represent Baruch at regional and national case competitions each spring.',
+      'The traveling team: four members selected by tryout to represent Baruch at regional and national case competitions each spring.',
     fee: 'Free (travel covered)',
     minimum: 'Tryout',
     horizon: 'Spring semester',
@@ -382,7 +382,7 @@ export const PROGRAMS = [
       'Travel and accommodation fully funded by the alumni association',
       'Weekly scrimmages against a faculty-judged panel',
       'Dedicated presentation and slide-craft coaching',
-      'Six competitions across the region in 2026',
+      'Four competitions across the region in 2026',
     ],
     timeline: [
       { when: 'Nov', what: 'Open tryout — case crack in 90 minutes' },
@@ -451,7 +451,7 @@ export const SAMPLE_MEDIA = [
     author: 'Wall Street Mastermind',
     platform: 'youtube',
     youtubeId: 'V9Bw9AVET78',
-    desc: 'A guest-session favourite: what actually matters when recruiting from a non-target, and the mistakes that sink most applicants.',
+    desc: 'A guest-session favorite: what actually matters when recruiting from a non-target, and the mistakes that sink most applicants.',
   },
   {
     id: 'seed-5',
@@ -548,7 +548,7 @@ export const EVENTS = [
     time: '11:59pm',
     location: 'Online',
     audience: 'All students',
-    desc: 'Last day to register. Teams of up to three, any major, no membership required. $2,500 prize pool.',
+    desc: 'Last day to register. Teams of up to three, any major, no membership required. $1,000 prize pool.',
   },
   {
     id: 'guest-speaker',

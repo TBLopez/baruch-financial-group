@@ -103,7 +103,7 @@ export function mountChrome(page, { overHero = false } = {}) {
       </a>
       <nav class="nav" aria-label="Primary">${links}</nav>
       <div class="header-actions">
-        <a class="btn sm ${overHero ? 'ghost-inv' : 'ghost'}" href="resources.html?id=analyst-training">Join the programme</a>
+        <a class="btn sm ${overHero ? 'ghost-inv' : 'ghost'}" href="resources.html?id=analyst-training">Join the program</a>
         <button class="burger" aria-label="Menu" aria-expanded="false">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
@@ -111,7 +111,7 @@ export function mountChrome(page, { overHero = false } = {}) {
     </div>
     <div class="mobile-nav" id="mobileNav">
       ${NAV.map((n) => `<a href="${n.href}" class="${n.href === page ? 'active' : ''}">${n.label}</a>`).join('')}
-      <a href="resources.html?id=analyst-training">Join the programme</a>
+      <a href="resources.html?id=analyst-training">Join the program</a>
     </div>`;
 
   document.body.prepend(header);
@@ -141,14 +141,13 @@ function renderFooter() {
             <span class="brand-mark">${LOGO}</span>
             <span class="brand-text"><span class="brand-name">Baruch College</span><span class="brand-sub">Financial Group</span></span>
           </a>
-          <p>A student-run financial organisation at ${esc(FIRM.school)}. Open to every major, funded by alumni, and managing a real allocation of the college endowment.</p>
-          <div style="margin-top:18px"><span class="poc-flag">Proof of concept — illustrative data only</span></div>
+          <p>A student-run financial organization at ${esc(FIRM.school)}. Open to every major, funded by alumni, and managing a real student-run fund.</p>
         </div>
         <div><h5>The group</h5><ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="index.html#approach">How we work</a></li>
-          <li><a href="resources.html">All programmes</a></li>
-          <li><a href="resources.html?id=analyst-training">Join the programme</a></li>
+          <li><a href="resources.html">All programs</a></li>
+          <li><a href="resources.html?id=analyst-training">Join the program</a></li>
         </ul></div>
         <div><h5>Media</h5><ul>
           <li><a href="media.html">Video library</a></li>
@@ -163,8 +162,8 @@ function renderFooter() {
         </ul></div>
       </div>
       <div class="footer-base">
-        <span>© ${new Date().getFullYear()} ${esc(FIRM.name)}. Sample site for evaluation purposes.</span>
-        <span>Not investment advice · No member data · Built as a local prototype</span>
+        <span>© ${new Date().getFullYear()} ${esc(FIRM.name)}.</span>
+        <span>Not investment advice · No member data collected</span>
       </div>
     </div>`;
   document.body.appendChild(f);

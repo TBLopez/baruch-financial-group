@@ -26,7 +26,7 @@ function thumbFor(m) {
   return gradientPoster(m.title, m.kind || '');
 }
 
-/* The whole catalogue is the seeded set from data.js — nothing is added at
+/* The whole catalog is the curated set from data.js — nothing is added at
    runtime, so the library is identical for every visitor. */
 function library() {
   return SAMPLE_MEDIA.map((s) => ({

@@ -233,8 +233,8 @@ function renderAumBand() {
     <div class="wrap">
       <div class="stat-band reveal">
         <div class="stat-cell">
-          <div class="count">$<span data-count="${FIRM.fund}" data-decimals="1">0</span><span class="suffix">M</span></div>
-          <div class="lbl">Student-managed fund<br><span class="tiny">Allocation from the ${esc(FIRM.school)} endowment · ${esc(FIRM.fundAsOf)}</span></div>
+          <div class="count">$<span data-count="${FIRM.fund}">0</span><span class="suffix">K</span></div>
+          <div class="lbl">Student-managed fund<br><span class="tiny">Alumni-funded · ${esc(FIRM.fundAsOf)}</span></div>
         </div>
         ${AUM_BREAKDOWN.map((a) => `
           <div class="stat-cell">
@@ -276,7 +276,7 @@ function renderFeaturedPrograms() {
         <span class="meta-item"><span class="k">Fee</span><span class="v">${esc(p.fee)}</span></span>
         <span class="meta-item"><span class="k">Minimum</span><span class="v">${esc(p.minimum)}</span></span>
       </div>
-      <div style="margin-top:18px" class="link-arrow">Programme detail ${ICONS.arrowRight}</div>
+      <div style="margin-top:18px" class="link-arrow">Program detail ${ICONS.arrowRight}</div>
     </a>`).join('');
 }
 

@@ -14,12 +14,12 @@ __def("data", function () {
 /* ==========================================================================
    data.js — local content model (no network, file:// safe)
    All copy for the site lives here. Swap these values to re-skin the whole
-   prototype for a different organisation.
+   prototype for a different organization.
 
    Structure mirrors the three reference sites:
      · NB.com      → 3-section hero carousel + "at a glance" figure band
      · Aptus ETFs  → dated Media entries with embedded players
-     · Aptus Fin.  → programme cards with full detail + downloadable documents
+     · Aptus Fin.  → program cards with full detail + downloadable documents
      · Amara       → warm editorial voice, figures that count up
    ========================================================================== */
 
@@ -29,12 +29,12 @@ const FIRM = {
   school: 'Baruch College',
   tagline: 'Learn the markets. Run real money. Graduate ready.',
   founded: 2009,
-  fund: 2.4,              // student-managed fund, $ millions
+  fund: 200,              // student-managed fund, $ thousands
   fundAsOf: 'Fall 2026',
-  members: 240,
-  alumni: 1900,
-  placement: 94,          // % of seniors with a finance offer at graduation
-  partnerFirms: 61,
+  members: 150,
+  alumni: 600,
+  placement: 88,          // % of graduating members with a finance offer
+  partnerFirms: 30,
 };
 
 /* Used in the generated PDFs/CSV/DOC headers and footers. */
@@ -46,13 +46,13 @@ const BRAND = {
 
 /* Where the student-managed fund is allocated — the "at a glance" band. */
 const AUM_BREAKDOWN = [
-  { label: 'Equities', value: 1.35, unit: 'M', note: 'Core, dividend and small-cap sleeves' },
-  { label: 'Fixed income', value: 620, unit: 'K', note: 'Treasury ladder and short-duration credit' },
-  { label: 'Alternatives', value: 430, unit: 'K', note: 'REITs, commodities and a satellite sleeve' },
+  { label: 'Equities', value: 120, unit: 'K', note: 'Core and dividend sleeves' },
+  { label: 'Fixed income', value: 50, unit: 'K', note: 'Treasury ladder and short-duration credit' },
+  { label: 'Alternatives', value: 30, unit: 'K', note: 'REITs and a satellite sleeve' },
 ];
 
 /* --------------------------------------------------------- hero carousel
-   Three sections — the front-page carousel the brief asked for.           */
+   Four sections — the front-page carousel the brief asked for.           */
 const SLIDES = [
   {
     id: 'learn',
@@ -63,14 +63,14 @@ const SLIDES = [
     lede:
       'Eight-week analyst training, weekly workshops and certification prep — taught by upperclassmen and alumni, not by a textbook. Open to every major, no application, no fee.',
     ctas: [
-      { label: 'See the training programme', href: 'resources.html?id=analyst-training', style: 'brass' },
+      { label: 'See the training program', href: 'resources.html?id=analyst-training', style: 'brass' },
       { label: 'Watch a workshop', href: 'media.html?tag=Workshop', style: 'ghost-inv' },
     ],
     art: 'art-a',
     cards: [
-      { label: 'Workshops per semester', value: '24', suffix: '' },
-      { label: 'Members trained in 2025–26', value: '240', suffix: '' },
-      { label: 'Certification pass rate', value: '92', suffix: '%' },
+      { label: 'Workshops per semester', value: '12', suffix: '' },
+      { label: 'Members trained in 2025–26', value: '120', suffix: '' },
+      { label: 'Certification pass rate', value: '90', suffix: '%' },
     ],
     cardFoot: 'Figures from the group’s 2025–26 annual report.',
   },
@@ -81,18 +81,18 @@ const SLIDES = [
     navSub: 'The student-managed fund',
     title: 'Real capital. Real mandate. Real <em>accountability</em>.',
     lede:
-      'A $2.4M allocation from the endowment, managed entirely by students. Every position needs a written thesis, a risk case and a committee vote — and the portfolio is reported to the trustees each semester.',
+      'A $200K portfolio funded by alumni, managed entirely by students. Every position needs a written thesis, a risk case and a committee vote — and the portfolio is reviewed with the alumni board each semester.',
     ctas: [
       { label: 'How the fund works', href: 'resources.html?id=student-fund', style: 'brass' },
       { label: 'Read the research', href: 'media.html?tag=Market+Update', style: 'ghost-inv' },
     ],
     art: 'art-b',
     cards: [
-      { label: 'Student-managed allocation', value: '2.4', suffix: 'M' },
-      { label: 'Analysts this year', value: '18', suffix: '' },
-      { label: 'Positions under coverage', value: '46', suffix: '' },
+      { label: 'Student-managed fund', value: '200', suffix: 'K' },
+      { label: 'Analysts this year', value: '12', suffix: '' },
+      { label: 'Positions under coverage', value: '24', suffix: '' },
     ],
-    cardFoot: 'Endowment allocation as of Fall 2026. Past performance is not indicative.',
+    cardFoot: 'Alumni-funded portfolio as of Fall 2026. Past performance is not indicative.',
   },
   {
     id: 'launch',
@@ -101,18 +101,18 @@ const SLIDES = [
     navSub: 'Careers, mentors, alumni',
     title: 'Graduate with a track record, not just a <em>transcript</em>.',
     lede:
-      'Ninety-four percent of our seniors hold a finance offer at graduation. Alumni mentors, mock interviews, resume reviews and a case-competition team that travels — the network starts the day you join.',
+      'Eighty-eight percent of our graduating members hold a finance offer at graduation. Alumni mentors, mock interviews, resume reviews and a case-competition team that travels — the network starts the day you join.',
     ctas: [
-      { label: 'Mentorship programme', href: 'resources.html?id=mentorship', style: 'brass' },
+      { label: 'Mentorship program', href: 'resources.html?id=mentorship', style: 'brass' },
       { label: 'Alumni panel recordings', href: 'media.html?tag=Careers', style: 'ghost-inv' },
     ],
     art: 'art-c',
     cards: [
-      { label: 'Alumni network', value: '1,900', suffix: '' },
-      { label: 'Seniors placed at graduation', value: '94', suffix: '%' },
-      { label: 'Partner firms', value: '61', suffix: '' },
+      { label: 'Alumni network', value: '600', suffix: '' },
+      { label: 'Graduating members placed', value: '88', suffix: '%' },
+      { label: 'Recruiting partners', value: '30', suffix: '' },
     ],
-    cardFoot: 'Class of 2026 outcomes survey, 71 respondents.',
+    cardFoot: 'Class of 2026 outcomes survey, 61 respondents.',
   },
   {
     id: 'member',
@@ -147,18 +147,18 @@ const AUDIENCES = ['First-years', 'Sophomores', 'Juniors', 'Seniors', 'All membe
 const PROGRAMS = [
   {
     id: 'analyst-training',
-    title: 'Analyst Training Programme',
+    title: 'Analyst Training Program',
     category: 'Education',
     audience: 'First-years',
     status: 'Open',
     featured: true,
     summary:
-      'An eight-week autumn programme that takes you from “what is a bond” to building a three-statement model. No application, no dues, no prior finance coursework.',
+      'An eight-week autumn program that takes you from “what is a bond” to building a three-statement model. No application, no dues, no prior finance coursework.',
     fee: 'Free',
     minimum: 'None',
     horizon: '8 weeks (Sept–Nov)',
     highlights: [
-      'Three-statement modelling, DCF and comparable-company analysis',
+      'Three-statement modeling, DCF and comparable-company analysis',
       'Weekly problem sets marked by upperclassmen with written feedback',
       'Bloomberg terminal certification built into week six',
       'Direct feeder into the student-managed fund and pitch competition',
@@ -175,7 +175,7 @@ const PROGRAMS = [
       { name: 'Problem set answer key (instructors)', type: 'xls' },
     ],
     faqs: [
-      { q: 'Do I need to be a finance major?', a: 'No. Roughly 40% of each cohort comes from economics, computer science, engineering or the sciences. The programme assumes no prior finance coursework.' },
+      { q: 'Do I need to be a finance major?', a: 'No. Roughly 40% of each cohort comes from economics, computer science, engineering or the sciences. The program assumes no prior finance coursework.' },
       { q: 'What is the time commitment?', a: 'One 90-minute session per week plus about two hours of problem sets. Weeks three and seven run longer.' },
       { q: 'Does it cost anything?', a: 'No. Materials and the Bloomberg certification fee are covered by the group’s alumni fund.' },
     ],
@@ -189,20 +189,20 @@ const PROGRAMS = [
     status: 'Enrolling',
     featured: true,
     summary:
-      'The flagship programme: a $2.4M endowment allocation managed by students across three sleeves, with a written investment process and semesterly reporting to the trustees.',
+      'The flagship program: a $200K alumni-funded portfolio managed by students across three sleeves, with a written investment process and a review with the alumni board each semester.',
     fee: 'Free (stipend eligible)',
-    minimum: 'Training programme completed',
+    minimum: 'Training program completed',
     horizon: '2 semesters',
     highlights: [
       'Sector coverage assigned for a full academic year — you own your names',
       'Every position requires a written thesis, risk case and committee vote',
-      'Live portfolio reporting to the endowment trustees each semester',
+      'Portfolio reviewed with the alumni board each semester',
       'Stipend for the two portfolio managers and the risk officer',
     ],
     timeline: [
       { when: 'Sept', what: 'Applications, interviews and sector assignments' },
       { when: 'Oct–Nov', what: 'Coverage build-out and first pitches' },
-      { when: 'Dec', what: 'Semester review with the trustees' },
+      { when: 'Dec', what: 'Semester review with the alumni board' },
       { when: 'Feb–Apr', what: 'Rebalance, second cycle of pitches' },
     ],
     documents: [
@@ -211,8 +211,8 @@ const PROGRAMS = [
       { name: 'Sector coverage tracker', type: 'xls' },
     ],
     faqs: [
-      { q: 'How many analysts are taken each year?', a: 'Eighteen, split across the three sleeves. Applications open the first week of September.' },
-      { q: 'Do students actually make the trades?', a: 'Yes. Trades settle through the college’s custodian on the committee’s authorisation; no faculty member can override a vote.' },
+      { q: 'How many analysts are taken each year?', a: 'Twelve, split across the three sleeves. Applications open the first week of September.' },
+      { q: 'Do students actually make the trades?', a: 'Yes. Trades are executed through the group’s brokerage account on committee authorization; no single officer can override a vote.' },
       { q: 'Is there a minimum GPA?', a: 'A 3.0 cumulative. We weight the written pitch more heavily than the transcript.' },
     ],
     video: 'Market Update',
@@ -232,7 +232,7 @@ const PROGRAMS = [
     highlights: [
       'Open to all majors and all years — no membership required',
       'Judged by alumni from research, asset management and hedge funds',
-      '$2,500 prize pool plus a guaranteed fund interview for finalists',
+      '$1,000 prize pool plus a guaranteed fund interview for finalists',
       'Written feedback on every submission that clears the first round',
     ],
     timeline: [
@@ -244,7 +244,7 @@ const PROGRAMS = [
     documents: [
       { name: 'Competition rules and judging rubric', type: 'pdf' },
       { name: 'Pitch deck template', type: 'doc' },
-      { name: '2025 winning thesis — anonymised', type: 'pdf' },
+      { name: '2025 winning thesis — anonymized', type: 'pdf' },
     ],
     faqs: [
       { q: 'Can I enter as a team?', a: 'Teams of up to three, or solo. Teams of three must split the written submission into clearly attributed sections.' },
@@ -254,7 +254,7 @@ const PROGRAMS = [
   },
   {
     id: 'mentorship',
-    title: 'Alumni Mentorship Programme',
+    title: 'Alumni Mentorship Program',
     category: 'Careers',
     audience: 'Sophomores',
     status: 'Enrolling',
@@ -273,7 +273,7 @@ const PROGRAMS = [
       { when: 'Sept', what: 'Mentee applications and interest survey' },
       { when: 'Oct', what: 'Matching and introductions' },
       { when: 'Nov–Apr', what: 'Six structured conversations' },
-      { when: 'May', what: 'Programme review and re-matching' },
+      { when: 'May', what: 'Program review and re-matching' },
     ],
     documents: [
       { name: 'Mentorship handbook and conversation guide', type: 'pdf' },
@@ -281,8 +281,8 @@ const PROGRAMS = [
       { name: 'Mock interview question bank', type: 'pdf' },
     ],
     faqs: [
-      { q: 'What if my mentor and I do not click?', a: 'Tell the programme lead. Re-matching is routine and never held against you.' },
-      { q: 'Can I be a mentor as an alumnus?', a: 'Yes — we need about 120 mentors a year and usually recruit 150 alumni across five sectors.' },
+      { q: 'What if my mentor and I do not click?', a: 'Tell the program lead. Re-matching is routine and never held against you.' },
+      { q: 'Can I be a mentor as an alumnus?', a: 'Yes — we need about 40 mentors a year and usually recruit 60 alumni across five sectors.' },
     ],
     video: 'Careers',
   },
@@ -293,8 +293,8 @@ const PROGRAMS = [
     audience: 'All members',
     status: 'Open',
     summary:
-      'Subsidised Bloomberg Market Concepts certification and a CFA Level I study group running weekly from February, with the mock exam series and registration fees covered.',
-    fee: 'Subsidised (32% of cost)',
+      'Subsidized Bloomberg Market Concepts certification and a CFA Level I study group running weekly from February, with the mock exam series and registration fees covered.',
+    fee: 'Subsidized (50% of cost)',
     minimum: 'Active membership',
     horizon: 'Semester-long',
     highlights: [
@@ -304,7 +304,7 @@ const PROGRAMS = [
       'Ethics and quant study groups led by members who have already passed',
     ],
     timeline: [
-      { when: 'Jan', what: 'Enrolment and diagnostic assessment' },
+      { when: 'Jan', what: 'Enrollment and diagnostic assessment' },
       { when: 'Feb–Apr', what: 'Weekly study group and mocks' },
       { when: 'May', what: 'Exam window and results review' },
     ],
@@ -313,7 +313,7 @@ const PROGRAMS = [
       { name: 'Mock exam score tracker', type: 'xls' },
     ],
     faqs: [
-      { q: 'Is the CFA reimbursement conditional?', a: 'Yes — you are reimbursed 40% on registering and a further 60% when you pass Level I.' },
+      { q: 'Is the CFA reimbursement conditional?', a: 'Yes — you are reimbursed half the fee on registering and the remainder when you pass Level I.' },
     ],
     video: 'Workshop',
   },
@@ -329,9 +329,9 @@ const PROGRAMS = [
     minimum: 'None',
     horizon: 'Rolling, ~2 hrs/month',
     highlights: [
-      'Four partner high schools, roughly 600 students reached each year',
+      'Four partner high schools, roughly 300 students reached each year',
       'Ready-made lesson plans — no preparation required from volunteers',
-      'Campus tax clinic files about 300 returns each season',
+      'Campus tax clinic files about 150 returns each season',
       'Counts toward the college’s community engagement certificate',
     ],
     timeline: [
@@ -364,7 +364,7 @@ const PROGRAMS = [
       'Six speaker events a year with women in senior finance roles',
       'Peer circles capped at eight so every voice is heard',
       'Interview prep targeted at the firms where members are actually recruiting',
-      'Alumni sponsor pool of 40+ across banking, markets and asset management',
+      'Alumni sponsor pool of 20+ across banking, markets and asset management',
     ],
     timeline: [
       { when: 'Sept', what: 'Kick-off and peer circle matching' },
@@ -372,7 +372,7 @@ const PROGRAMS = [
       { when: 'May', what: 'End-of-year networking dinner' },
     ],
     documents: [
-      { name: 'Programme overview and speaker archive', type: 'pdf' },
+      { name: 'Program overview and speaker archive', type: 'pdf' },
       { name: 'Recruiting timeline by firm type', type: 'pdf' },
     ],
     faqs: [
@@ -387,7 +387,7 @@ const PROGRAMS = [
     audience: 'Juniors',
     status: 'Pilot',
     summary:
-      'The travelling team: four members selected by tryout to represent Baruch at regional and national case competitions each spring.',
+      'The traveling team: four members selected by tryout to represent Baruch at regional and national case competitions each spring.',
     fee: 'Free (travel covered)',
     minimum: 'Tryout',
     horizon: 'Spring semester',
@@ -395,7 +395,7 @@ const PROGRAMS = [
       'Travel and accommodation fully funded by the alumni association',
       'Weekly scrimmages against a faculty-judged panel',
       'Dedicated presentation and slide-craft coaching',
-      'Six competitions across the region in 2026',
+      'Four competitions across the region in 2026',
     ],
     timeline: [
       { when: 'Nov', what: 'Open tryout — case crack in 90 minutes' },
@@ -464,7 +464,7 @@ const SAMPLE_MEDIA = [
     author: 'Wall Street Mastermind',
     platform: 'youtube',
     youtubeId: 'V9Bw9AVET78',
-    desc: 'A guest-session favourite: what actually matters when recruiting from a non-target, and the mistakes that sink most applicants.',
+    desc: 'A guest-session favorite: what actually matters when recruiting from a non-target, and the mistakes that sink most applicants.',
   },
   {
     id: 'seed-5',
@@ -561,7 +561,7 @@ const EVENTS = [
     time: '11:59pm',
     location: 'Online',
     audience: 'All students',
-    desc: 'Last day to register. Teams of up to three, any major, no membership required. $2,500 prize pool.',
+    desc: 'Last day to register. Teams of up to three, any major, no membership required. $1,000 prize pool.',
   },
   {
     id: 'guest-speaker',
@@ -766,7 +766,7 @@ function mountChrome(page, { overHero = false } = {}) {
       </a>
       <nav class="nav" aria-label="Primary">${links}</nav>
       <div class="header-actions">
-        <a class="btn sm ${overHero ? 'ghost-inv' : 'ghost'}" href="resources.html?id=analyst-training">Join the programme</a>
+        <a class="btn sm ${overHero ? 'ghost-inv' : 'ghost'}" href="resources.html?id=analyst-training">Join the program</a>
         <button class="burger" aria-label="Menu" aria-expanded="false">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
@@ -774,7 +774,7 @@ function mountChrome(page, { overHero = false } = {}) {
     </div>
     <div class="mobile-nav" id="mobileNav">
       ${NAV.map((n) => `<a href="${n.href}" class="${n.href === page ? 'active' : ''}">${n.label}</a>`).join('')}
-      <a href="resources.html?id=analyst-training">Join the programme</a>
+      <a href="resources.html?id=analyst-training">Join the program</a>
     </div>`;
 
   document.body.prepend(header);
@@ -804,14 +804,13 @@ function renderFooter() {
             <span class="brand-mark">${LOGO}</span>
             <span class="brand-text"><span class="brand-name">Baruch College</span><span class="brand-sub">Financial Group</span></span>
           </a>
-          <p>A student-run financial organisation at ${esc(FIRM.school)}. Open to every major, funded by alumni, and managing a real allocation of the college endowment.</p>
-          <div style="margin-top:18px"><span class="poc-flag">Proof of concept — illustrative data only</span></div>
+          <p>A student-run financial organization at ${esc(FIRM.school)}. Open to every major, funded by alumni, and managing a real student-run fund.</p>
         </div>
         <div><h5>The group</h5><ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="index.html#approach">How we work</a></li>
-          <li><a href="resources.html">All programmes</a></li>
-          <li><a href="resources.html?id=analyst-training">Join the programme</a></li>
+          <li><a href="resources.html">All programs</a></li>
+          <li><a href="resources.html?id=analyst-training">Join the program</a></li>
         </ul></div>
         <div><h5>Media</h5><ul>
           <li><a href="media.html">Video library</a></li>
@@ -826,8 +825,8 @@ function renderFooter() {
         </ul></div>
       </div>
       <div class="footer-base">
-        <span>© ${new Date().getFullYear()} ${esc(FIRM.name)}. Sample site for evaluation purposes.</span>
-        <span>Not investment advice · No member data · Built as a local prototype</span>
+        <span>© ${new Date().getFullYear()} ${esc(FIRM.name)}.</span>
+        <span>Not investment advice · No member data collected</span>
       </div>
     </div>`;
   document.body.appendChild(f);
@@ -1249,7 +1248,7 @@ function buildPdf(doc) {
   /* ------------------------------------------------------------ footers */
   const total = pages.length; // used for the “Page n of m” footer
   pages.forEach((pageOps, i) => {
-    const foot = `${ascii(doc.footer || 'Illustrative sample content - not investment advice.')}`;
+    const foot = `${ascii(doc.footer || 'Not investment advice.')}`;
     pageOps.push(`BT ${color(MUTED)} /F1 7.6 Tf ${M} 42 Td (${pdfEscape(foot)}) Tj ET`);
     const pn = `Page ${i + 1} of ${total}`;
     const w = textWidth(pn, 7.6, false);
@@ -1281,7 +1280,7 @@ function buildPdf(doc) {
 
   // Info dictionary is object N+1, written in the same pass so the xref stays valid.
   const infoNum = objs.length;
-  objs[infoNum] = `<< /Title (${pdfEscape(ascii(doc.title))}) /Producer (Baruch College Financial Group prototype) >>`;
+  objs[infoNum] = `<< /Title (${pdfEscape(ascii(doc.title))}) /Producer (Baruch College Financial Group) >>`;
   const objCount = objs.length; // objects are numbered 1 .. objCount-1
 
   let out = `%PDF-1.4\n%\xE2\xE3\xCF\xD3\n`;
@@ -1312,13 +1311,13 @@ function programFactSheet(program, org = BRAND.org) {
       items: [
         { k: 'Program category', v: program.category },
         { k: 'Designed for', v: program.audience },
-        { k: 'Enrolment status', v: program.status },
+        { k: 'Enrollment status', v: program.status },
         { k: 'Fee structure', v: program.fee },
         { k: 'Minimum', v: program.minimum },
         { k: 'Typical horizon', v: program.horizon },
       ],
     },
-    { type: 'h2', text: 'What the programme covers' },
+    { type: 'h2', text: 'What the program covers' },
     ...program.highlights.map((h) => ({ type: 'bullet', text: h })),
     { type: 'h2', text: 'Delivery schedule' },
     { type: 'table', columns: ['Stage', 'What happens'], widths: [110, CONTENT_W - 110], rows: program.timeline.map((t) => [t.when, t.what]) },
@@ -1331,7 +1330,7 @@ function programFactSheet(program, org = BRAND.org) {
     {
       type: 'note',
       text:
-        'Illustrative prototype content generated for evaluation only. Figures, fees and schedules are sample data and do not constitute an offer, advice, or a solicitation.',
+        'Not an offer, advice, or a solicitation. Figures and schedules are subject to change.',
     },
   ];
 
@@ -1601,8 +1600,8 @@ function renderAumBand() {
     <div class="wrap">
       <div class="stat-band reveal">
         <div class="stat-cell">
-          <div class="count">$<span data-count="${FIRM.fund}" data-decimals="1">0</span><span class="suffix">M</span></div>
-          <div class="lbl">Student-managed fund<br><span class="tiny">Allocation from the ${esc(FIRM.school)} endowment · ${esc(FIRM.fundAsOf)}</span></div>
+          <div class="count">$<span data-count="${FIRM.fund}">0</span><span class="suffix">K</span></div>
+          <div class="lbl">Student-managed fund<br><span class="tiny">Alumni-funded · ${esc(FIRM.fundAsOf)}</span></div>
         </div>
         ${AUM_BREAKDOWN.map((a) => `
           <div class="stat-cell">
@@ -1644,7 +1643,7 @@ function renderFeaturedPrograms() {
         <span class="meta-item"><span class="k">Fee</span><span class="v">${esc(p.fee)}</span></span>
         <span class="meta-item"><span class="k">Minimum</span><span class="v">${esc(p.minimum)}</span></span>
       </div>
-      <div style="margin-top:18px" class="link-arrow">Programme detail ${ICONS.arrowRight}</div>
+      <div style="margin-top:18px" class="link-arrow">Program detail ${ICONS.arrowRight}</div>
     </a>`).join('');
 }
 
@@ -1696,7 +1695,7 @@ function thumbFor(m) {
   return gradientPoster(m.title, m.kind || '');
 }
 
-/* The whole catalogue is the seeded set from data.js — nothing is added at
+/* The whole catalog is the curated set from data.js — nothing is added at
    runtime, so the library is identical for every visitor. */
 function library() {
   return SAMPLE_MEDIA.map((s) => ({
@@ -1971,7 +1970,7 @@ return { bootMedia };
 
 __def("resources", function () {
 /* ==========================================================================
-   resources.js — Resources tab / program catalogue
+   resources.js — Resources tab / program catalog
    · Faceted filtering (category, audience, status) + search + sort
    · Expandable program detail: highlights, delivery schedule, documents, FAQ
    · Document downloads are GENERATED in the browser (real PDF / CSV / DOC)
@@ -2090,7 +2089,7 @@ function programHtml(p) {
             <div class="detail-grid">
               <div>
                 <div class="detail-block">
-                  <h4>What the programme covers</h4>
+                  <h4>What the program covers</h4>
                   <ul class="hl-list">
                     ${p.highlights.map((h) => `<li>${ICONS.check}<span>${esc(h)}</span></li>`).join('')}
                   </ul>
@@ -2112,7 +2111,7 @@ function programHtml(p) {
 
               <div>
                 <div class="detail-block">
-                  <h4>Programme documents</h4>
+                  <h4>Program documents</h4>
                   <div class="doc-list">
                     ${p.documents.map((d, i) => `
                       <button class="doc" data-doc="${esc(p.id)}" data-i="${i}">
@@ -2143,7 +2142,7 @@ function programHtml(p) {
             <div class="detail-cta">
               <button class="btn brass" data-factsheet="${esc(p.id)}">${ICONS.doc} Download fact sheet (PDF)</button>
               <button class="btn ghost" data-pack="${esc(p.id)}">${ICONS.download} Download all ${p.documents.length} documents</button>
-              <button class="btn ghost" data-request="${esc(p.id)}">Request a call about this programme</button>
+              <button class="btn ghost" data-request="${esc(p.id)}">Request a call about this program</button>
             </div>
           </div>
         </div>
@@ -2158,15 +2157,15 @@ function renderList() {
   const list = currentList();
   if (count) {
     count.textContent = state.q || state.cat !== 'All' || state.aud !== 'All' || state.status !== 'All'
-      ? `${list.length} of ${PROGRAMS.length} programmes shown`
-      : `${PROGRAMS.length} programmes in the catalogue`;
+      ? `${list.length} of ${PROGRAMS.length} programs shown`
+      : `${PROGRAMS.length} programs in the catalog`;
   }
 
   if (!list.length) {
     host.innerHTML = `
       <div class="empty">
-        <h3>No programmes match those filters</h3>
-        <p>Loosen a filter or clear the search box to see the full catalogue.</p>
+        <h3>No programs match those filters</h3>
+        <p>Loosen a filter or clear the search box to see the full catalog.</p>
         <div style="margin-top:18px"><button class="btn ghost" data-reset>Reset all filters</button></div>
       </div>`;
     return;
@@ -2199,22 +2198,22 @@ function docAsText(p, doc) {
     'FREQUENTLY ASKED',
     ...p.faqs.flatMap((f) => [`  Q: ${f.q}`, `  A: ${f.a}`, '']),
     '',
-    `Generated ${new Date().toLocaleString()} — illustrative sample content, not investment advice.`,
+    `Generated ${new Date().toLocaleString()} — not investment advice.`,
   ].join('\n');
 }
 
 function docAsPdf(p, doc) {
-  const isSheet = /comparison|worksheet|matrix|modelling|tracker|checklist/i.test(doc.name);
+  const isSheet = /comparison|worksheet|matrix|modeling|tracker|checklist/i.test(doc.name);
   const blocks = [
-    { type: 'p', text: `Document: ${doc.name}. Prepared for the ${p.title} programme (${p.category} · ${p.audience}).` },
+    { type: 'p', text: `Document: ${doc.name}. Prepared for the ${p.title} program (${p.category} · ${p.audience}).` },
     { type: 'h2', text: 'Purpose of this document' },
     {
       type: 'p',
       text: isSheet
-        ? 'This working document is supplied as a structured worksheet. Populate it with client-specific figures before use; it is designed to sit alongside the programme fact sheet.'
-        : 'This reference document summarises the programme terms, scope and delivery obligations of the engagement described above.',
+        ? 'This working document is supplied as a structured worksheet. Populate it with client-specific figures before use; it is designed to sit alongside the program fact sheet.'
+        : 'This reference document summarises the program terms, scope and delivery obligations of the engagement described above.',
     },
-    { type: 'h2', text: 'Programme terms' },
+    { type: 'h2', text: 'Program terms' },
     {
       type: 'kv',
       items: [
@@ -2229,11 +2228,11 @@ function docAsPdf(p, doc) {
     { type: 'h2', text: 'Schedule' },
     { type: 'table', columns: ['Stage', 'Activity'], widths: [110, 390], rows: p.timeline.map((t) => [t.when, t.what]) },
     { type: 'space', h: 8 },
-    { type: 'note', text: 'Sample document auto-generated by the prototype site. Replace with approved compliance-reviewed collateral before any external use.' },
+    { type: 'note', text: 'Generated in your browser. Review before external use.' },
   ];
   return buildPdf({
     org: BRAND.org,
-    kicker: 'PROGRAMME DOCUMENT',
+    kicker: 'PROGRAM DOCUMENT',
     title: doc.name,
     subtitle: `${p.title} · ${p.status}`,
     metaLine: `Generated ${new Date().toLocaleString()}`,
@@ -2244,7 +2243,7 @@ function docAsPdf(p, doc) {
 
 function docAsCsv(p, doc) {
   const rows = [
-    ['Programme', p.title],
+    ['Program', p.title],
     ['Document', doc.name],
     ['Category', p.category],
     ['Audience', p.audience],
@@ -2279,7 +2278,7 @@ function docAsWord(p, doc) {
     </table>
     <h2>Frequently asked</h2>
     ${p.faqs.map((f) => `<p><strong>${esc(f.q)}</strong><br>${esc(f.a)}</p>`).join('')}
-    <p style="font-size:9pt;color:#666">Generated ${new Date().toLocaleString()} — illustrative sample content.</p>
+    <p style="font-size:9pt;color:#666">Generated ${new Date().toLocaleString()}.</p>
     </body></html>`;
   return new Blob(['\uFEFF' + html], { type: 'application/msword' });
 }
@@ -2297,7 +2296,7 @@ function downloadDoc(p, i) {
     if (doc.type === 'pdf') downloadBlob(docAsPdf(p, doc), `${base}.pdf`);
     else if (doc.type === 'xls') downloadBlob(docAsCsv(p, doc), `${base}.csv`);
     else if (doc.type === 'doc') downloadBlob(docAsWord(p, doc), `${base}.doc`);
-    // Fallback for an unrecognised doc.type — export as plain text rather than fail silently.
+    // Fallback for an unrecognized doc.type — export as plain text rather than fail silently.
     else downloadBlob(new Blob([docAsText(p, doc)], { type: 'text/plain' }), `${base}.txt`);
     toast('Document generated', `${doc.name} — built in your browser.`);
   } catch (err) {
@@ -2312,17 +2311,17 @@ function downloadAll(p) {
     { type: 'p', text: p.summary },
     { type: 'h2', text: 'Documents in this pack' },
     ...p.documents.map((d, i) => ({ type: 'bullet', text: `${i + 1}. ${d.name} (${d.type.toUpperCase()})` })),
-    { type: 'h2', text: 'Programme scope' },
+    { type: 'h2', text: 'Program scope' },
     ...p.highlights.map((h) => ({ type: 'bullet', text: h })),
     { type: 'h2', text: 'Delivery schedule' },
     { type: 'table', columns: ['Stage', 'Activity'], widths: [110, 390], rows: p.timeline.map((t) => [t.when, t.what]) },
     { type: 'h2', text: 'Frequently asked' },
     ...p.faqs.flatMap((f) => [{ type: 'p', text: f.q }, { type: 'p', text: f.a }]),
-    { type: 'note', text: 'Combined programme pack auto-generated by the prototype. Illustrative content only.' },
+    { type: 'note', text: 'Combined program pack generated in your browser.' },
   ];
   const blob = buildPdf({
     org: BRAND.org,
-    kicker: 'PROGRAMME PACK',
+    kicker: 'PROGRAM PACK',
     title: p.title,
     subtitle: `${p.category} · ${p.audience} · ${p.status}`,
     metaLine: `Generated ${new Date().toLocaleString()} · Reference ${p.id.toUpperCase()}`,
@@ -2330,7 +2329,7 @@ function downloadAll(p) {
     blocks,
   });
   downloadBlob(blob, `${p.title.replace(/[^\w\s-]+/g, '').replace(/\s+/g, '_')}_pack.pdf`);
-  toast('Programme pack generated', `${p.documents.length + 1} documents merged into one PDF.`);
+  toast('Program pack generated', `${p.documents.length + 1} documents merged into one PDF.`);
 }
 
 /* --------------------------------------------------------------- request */
@@ -2340,7 +2339,7 @@ function requestModal(p) {
   scrim.innerHTML = `
     <div class="modal" role="dialog" aria-modal="true" aria-label="Request a call">
       <h3>Request a call</h3>
-      <p>Tell us where to reach you and we will follow up about <strong>${esc(p.title)}</strong>. This prototype does not send anything anywhere — it just demonstrates the flow.</p>
+      <p>Tell us where to reach you and we will follow up about <strong>${esc(p.title)}</strong>. We will follow up at the address you provide. (Demo build — nothing is sent yet.)</p>
       <div class="field"><label for="rqName">Name</label><input id="rqName" placeholder="Alex Morgan"></div>
       <div class="field"><label for="rqEmail">Email</label><input id="rqEmail" type="email" placeholder="alex@example.com"></div>
       <div class="field"><label for="rqWhen">Preferred time</label>
@@ -2372,7 +2371,7 @@ function requestModal(p) {
       return;
     }
     close();
-    toast('Request noted (demo)', `No data left this machine. In production this would book a slot for ${p.title}.`);
+    toast('Request noted (demo)', `Nothing is sent in this demo build.`);
   });
   setTimeout(() => $('#rqName', scrim)?.focus(), 60);
 }
@@ -2535,7 +2534,7 @@ const dayNum = (iso) => iso.slice(8, 10);
 const monthLabel = (iso) =>
   new Date(iso + 'T12:00:00').toLocaleDateString('en-US', { month: 'short' }).toUpperCase();
 
-/* Filter + sort the catalogue from data.js. "Soonest" puts future events
+/* Filter + sort the catalog from data.js. "Soonest" puts future events
    first; "latest" inverts it. The past/upcoming split derives from the date. */
 function applyFilters() {
   const q = state.q.trim().toLowerCase();

@@ -18,7 +18,7 @@ const dayNum = (iso) => iso.slice(8, 10);
 const monthLabel = (iso) =>
   new Date(iso + 'T12:00:00').toLocaleDateString('en-US', { month: 'short' }).toUpperCase();
 
-/* Filter + sort the catalogue from data.js. "Soonest" puts future events
+/* Filter + sort the catalog from data.js. "Soonest" puts future events
    first; "latest" inverts it. The past/upcoming split derives from the date. */
 function applyFilters() {
   const q = state.q.trim().toLowerCase();

@@ -237,7 +237,7 @@ export function buildPdf(doc) {
   /* ------------------------------------------------------------ footers */
   const total = pages.length; // used for the “Page n of m” footer
   pages.forEach((pageOps, i) => {
-    const foot = `${ascii(doc.footer || 'Illustrative sample content - not investment advice.')}`;
+    const foot = `${ascii(doc.footer || 'Not investment advice.')}`;
     pageOps.push(`BT ${color(MUTED)} /F1 7.6 Tf ${M} 42 Td (${pdfEscape(foot)}) Tj ET`);
     const pn = `Page ${i + 1} of ${total}`;
     const w = textWidth(pn, 7.6, false);
@@ -269,7 +269,7 @@ export function buildPdf(doc) {
 
   // Info dictionary is object N+1, written in the same pass so the xref stays valid.
   const infoNum = objs.length;
-  objs[infoNum] = `<< /Title (${pdfEscape(ascii(doc.title))}) /Producer (Baruch College Financial Group prototype) >>`;
+  objs[infoNum] = `<< /Title (${pdfEscape(ascii(doc.title))}) /Producer (Baruch College Financial Group) >>`;
   const objCount = objs.length; // objects are numbered 1 .. objCount-1
 
   let out = `%PDF-1.4\n%\xE2\xE3\xCF\xD3\n`;
@@ -300,13 +300,13 @@ export function programFactSheet(program, org = BRAND.org) {
       items: [
         { k: 'Program category', v: program.category },
         { k: 'Designed for', v: program.audience },
-        { k: 'Enrolment status', v: program.status },
+        { k: 'Enrollment status', v: program.status },
         { k: 'Fee structure', v: program.fee },
         { k: 'Minimum', v: program.minimum },
         { k: 'Typical horizon', v: program.horizon },
       ],
     },
-    { type: 'h2', text: 'What the programme covers' },
+    { type: 'h2', text: 'What the program covers' },
     ...program.highlights.map((h) => ({ type: 'bullet', text: h })),
     { type: 'h2', text: 'Delivery schedule' },
     { type: 'table', columns: ['Stage', 'What happens'], widths: [110, CONTENT_W - 110], rows: program.timeline.map((t) => [t.when, t.what]) },
@@ -319,7 +319,7 @@ export function programFactSheet(program, org = BRAND.org) {
     {
       type: 'note',
       text:
-        'Illustrative prototype content generated for evaluation only. Figures, fees and schedules are sample data and do not constitute an offer, advice, or a solicitation.',
+        'Not an offer, advice, or a solicitation. Figures and schedules are subject to change.',
     },
   ];
 
