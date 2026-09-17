@@ -4,7 +4,9 @@
 Nothing is installed, nothing is generated at deploy time, and there is no dependency to
 keep alive. Upload this folder → it is a live website.
 
-- **Local preview:** double-click **`start.command`** (serves on `http://localhost:8777`)
+- **Local preview:** double-click **`start.command`** — it serves on the first free port from
+  `8777` upward. (Port 8777 is currently held by the *original* `financial-poc` server, so this
+  copy will come up on **8778** until that one is stopped: `kill 3016`.)
 - **Verified running:** yes — Python 3.14 static server, `127.0.0.1:8777`
 - **Original prototype folder** (`~/Desktop/financial-poc`) is untouched and still exists.
   This folder is a copy of it, renamed, with the handoff documentation added.
@@ -48,7 +50,8 @@ free git-based CMS, or run a newsletter. Recommendation and setup steps in
 ```
 Baruch-Financial-Group/
 ├── README.md                  ← you are here
-├── docs/                      handoff documentation (not published to the web)
+├── docs/                      handoff documentation — rm -rf before launch if you don't
+│                              want these notes public (they are plain text, harmless either way)
 │   ├── 01-GO-LIVE.md
 │   ├── 02-EDITING.md
 │   ├── 03-BLOG-AND-POSTING.md
