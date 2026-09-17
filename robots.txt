@@ -1,0 +1,6 @@
+# Baruch College Financial Group
+User-agent: *
+Allow: /
+
+# TODO: swap in your live domain before/after deploy.
+Sitemap: https://baruchfinancialgroup.org/sitemap.xml

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Style previews — Baruch College Financial Group</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: #0b0d12; color: #e8ecf4;
+    font: 15px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 1500px; margin: 0 auto; padding: 48px 28px 96px; }
+  h1 { font-size: clamp(28px, 3.4vw, 42px); margin: 0 0 12px; letter-spacing: -0.02em; }
+  .lede { color: #97a3b6; max-width: 74ch; margin: 0 0 12px; }
+  .lede + .lede { margin-top: -6px; }
+  a { color: #9ecbff; }
+  .theme { margin-top: 64px; border-top: 1px solid #232a36; padding-top: 32px; }
+  .theme header { display: flex; gap: 28px; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; }
+  .theme h2 { font-size: 24px; margin: 0 0 8px; letter-spacing: -0.01em; }
+  .theme .mode { font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em;
+    background: #1b2230; border: 1px solid #2c3542; color: #8fa0b8; padding: 3px 8px; border-radius: 999px;
+    vertical-align: middle; margin-left: 8px; }
+  .theme header p { color: #97a3b6; max-width: 66ch; margin: 0; font-size: 14.5px; }
+  .side { display: flex; align-items: center; gap: 16px; }
+  .dots { display: flex; gap: 6px; }
+  .dots span { width: 22px; height: 22px; border-radius: 7px; border: 1px solid #2c3542; }
+  .open { font-size: 13px; font-weight: 600; text-decoration: none; border: 1px solid #2c3542;
+    background: #141a24; padding: 8px 14px; border-radius: 999px; }
+  .open:hover { background: #1b2230; }
+  .strip { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; margin-top: 24px; }
+  figure { margin: 0; background: #10141c; border: 1px solid #232a36; border-radius: 12px; overflow: hidden; }
+  figure img { display: block; width: 100%; height: auto; }
+  figure.wide { grid-column: 1 / -1; }
+  figure.tall img { max-height: 720px; object-fit: cover; object-position: top; }
+  figcaption { font-size: 12px; color: #8693a6; padding: 10px 14px; border-top: 1px solid #232a36; }
+  table { border-collapse: collapse; margin-top: 28px; font-size: 13px; width: 100%; }
+  th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid #1e252f; vertical-align: top; }
+  th { color: #8fa0b8; font-weight: 600; }
+  code { font: 12px ui-monospace, Menlo, monospace; color: #cfe3ff; }
+  .note { background: #10141c; border: 1px solid #232a36; border-radius: 12px; padding: 18px 20px; margin-top: 24px; }
+  @media (max-width: 820px) { .strip { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Style previews</h1>
+  <p class="lede">Stills of all five directions, captured from the running site at 1440px (and 390px for mobile).
+     These are real renders — the same pages, same content, different visual language.</p>
+  <p class="lede">Nothing here is a mockup. For the live version with a switcher, open
+     <a href="../themes.html">themes.html</a>.</p>
+
+  <div class="note">
+    <strong>How to pick one.</strong> Ivory is the conservative choice if faculty, trustees or alumni
+    need to approve it. Atlas reads most “modern university”. Terrace is the warmest and most editorial.
+    Nightfall is the one students tend to gravitate to. Varsity is the loudest, best for recruiting season.
+  </div>
+
+  <table>
+    <thead><tr><th>Token</th><th>Ivory &amp; Navy</th><th>Atlas</th><th>Terrace</th><th>Nightfall</th><th>Varsity</th></tr></thead>
+    <tbody>
+    <tr><th>display</th><td><code>&quot;Iowan Old Style&quot;</code></td><td><code>-apple-system</code></td><td><code>&quot;Iowan Old Style&quot;</code></td><td><code>-apple-system</code></td><td><code>-apple-system</code></td></tr>
+    <tr><th>hWeight</th><td><code>500</code></td><td><code>620</code></td><td><code>500</code></td><td><code>640</code></td><td><code>700</code></td></tr>
+    <tr><th>radiusLg</th><td><code>16px</code></td><td><code>2px</code></td><td><code>6px</code></td><td><code>20px</code></td><td><code>24px</code></td></tr>
+    <tr><th>accent</th><td><code>#C08E3C</code></td><td><code>#1B4DFF</code></td><td><code>#B4522F</code></td><td><code>#3ED6A4</code></td><td><code>#C8102E</code></td></tr>
+    <tr><th>paper</th><td><code>#F7F5F1</code></td><td><code>#FFFFFF</code></td><td><code>#FBF6EC</code></td><td><code>#0B0F17</code></td><td><code>#F7F7FA</code></td></tr>
+    <tr><th>heroBase</th><td><code>#04101F</code></td><td><code>#08080A</code></td><td><code>#13251B</code></td><td><code>#05070C</code></td><td><code>#0C0C10</code></td></tr>
+    </tbody>
+  </table>
+
+  <section class="theme" id="ivory">
+    <header>
+      <div>
+        <h2>Ivory &amp; Navy <span class="mode">light</span></h2>
+        <p>Institutional and calm. Serif headlines, brass accents, soft depth. The safe choice for trustees, faculty and alumni.</p>
+      </div>
+      <div class="side">
+        <div class="dots"><span style="background:#F7F5F1"></span><span style="background:#C08E3C"></span><span style="background:#04101F"></span></div>
+        <a class="open" href="../themes.html?theme=ivory">Open live&nbsp;↗</a>
+      </div>
+    </header>
+    <div class="strip">
+      <figure class="shot wide">
+        <a href="ivory_hero.jpg" target="_blank" rel="noopener"><img src="ivory_hero.jpg" alt="Home — above the fold — ivory" loading="lazy"></a>
+        <figcaption>Home — above the fold</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="ivory_home_full.jpg" target="_blank" rel="noopener"><img src="ivory_home_full.jpg" alt="Home — full page — ivory" loading="lazy"></a>
+        <figcaption>Home — full page</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="ivory_resources.jpg" target="_blank" rel="noopener"><img src="ivory_resources.jpg" alt="Programmes (expanded) — ivory" loading="lazy"></a>
+        <figcaption>Programmes (expanded)</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="ivory_media.jpg" target="_blank" rel="noopener"><img src="ivory_media.jpg" alt="Media library — ivory" loading="lazy"></a>
+        <figcaption>Media library</figcaption>
+      </figure>
+      <figure class="shot tall">
+        <a href="ivory_mobile.jpg" target="_blank" rel="noopener"><img src="ivory_mobile.jpg" alt="Mobile (390px) — ivory" loading="lazy"></a>
+        <figcaption>Mobile (390px)</figcaption>
+      </figure>
+    </div>
+  </section>
+  <section class="theme" id="atlas">
+    <header>
+      <div>
+        <h2>Atlas <span class="mode">light</span></h2>
+        <p>Modern academic. Grotesque headlines, hairline rules, square corners, cobalt accent, dense grid. Reads like a design-forward university.</p>
+      </div>
+      <div class="side">
+        <div class="dots"><span style="background:#FFFFFF"></span><span style="background:#1B4DFF"></span><span style="background:#08080A"></span></div>
+        <a class="open" href="../themes.html?theme=atlas">Open live&nbsp;↗</a>
+      </div>
+    </header>
+    <div class="strip">
+      <figure class="shot wide">
+        <a href="atlas_hero.jpg" target="_blank" rel="noopener"><img src="atlas_hero.jpg" alt="Home — above the fold — atlas" loading="lazy"></a>
+        <figcaption>Home — above the fold</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="atlas_home_full.jpg" target="_blank" rel="noopener"><img src="atlas_home_full.jpg" alt="Home — full page — atlas" loading="lazy"></a>
+        <figcaption>Home — full page</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="atlas_resources.jpg" target="_blank" rel="noopener"><img src="atlas_resources.jpg" alt="Programmes (expanded) — atlas" loading="lazy"></a>
+        <figcaption>Programmes (expanded)</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="atlas_media.jpg" target="_blank" rel="noopener"><img src="atlas_media.jpg" alt="Media library — atlas" loading="lazy"></a>
+        <figcaption>Media library</figcaption>
+      </figure>
+      <figure class="shot tall">
+        <a href="atlas_mobile.jpg" target="_blank" rel="noopener"><img src="atlas_mobile.jpg" alt="Mobile (390px) — atlas" loading="lazy"></a>
+        <figcaption>Mobile (390px)</figcaption>
+      </figure>
+    </div>
+  </section>
+  <section class="theme" id="terrace">
+    <header>
+      <div>
+        <h2>Terrace <span class="mode">light</span></h2>
+        <p>Warm editorial. Cream paper, terracotta and forest, large serif type, flat surfaces and rule lines. Human and literary.</p>
+      </div>
+      <div class="side">
+        <div class="dots"><span style="background:#FBF6EC"></span><span style="background:#B4522F"></span><span style="background:#13251B"></span></div>
+        <a class="open" href="../themes.html?theme=terrace">Open live&nbsp;↗</a>
+      </div>
+    </header>
+    <div class="strip">
+      <figure class="shot wide">
+        <a href="terrace_hero.jpg" target="_blank" rel="noopener"><img src="terrace_hero.jpg" alt="Home — above the fold — terrace" loading="lazy"></a>
+        <figcaption>Home — above the fold</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="terrace_home_full.jpg" target="_blank" rel="noopener"><img src="terrace_home_full.jpg" alt="Home — full page — terrace" loading="lazy"></a>
+        <figcaption>Home — full page</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="terrace_resources.jpg" target="_blank" rel="noopener"><img src="terrace_resources.jpg" alt="Programmes (expanded) — terrace" loading="lazy"></a>
+        <figcaption>Programmes (expanded)</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="terrace_media.jpg" target="_blank" rel="noopener"><img src="terrace_media.jpg" alt="Media library — terrace" loading="lazy"></a>
+        <figcaption>Media library</figcaption>
+      </figure>
+      <figure class="shot tall">
+        <a href="terrace_mobile.jpg" target="_blank" rel="noopener"><img src="terrace_mobile.jpg" alt="Mobile (390px) — terrace" loading="lazy"></a>
+        <figcaption>Mobile (390px)</figcaption>
+      </figure>
+    </div>
+  </section>
+  <section class="theme" id="nightfall">
+    <header>
+      <div>
+        <h2>Nightfall <span class="mode">dark</span></h2>
+        <p>Dark and product-like. Mint accent, rounded panels, soft glow. The one students tend to pick.</p>
+      </div>
+      <div class="side">
+        <div class="dots"><span style="background:#0B0F17"></span><span style="background:#3ED6A4"></span><span style="background:#05070C"></span></div>
+        <a class="open" href="../themes.html?theme=nightfall">Open live&nbsp;↗</a>
+      </div>
+    </header>
+    <div class="strip">
+      <figure class="shot wide">
+        <a href="nightfall_hero.jpg" target="_blank" rel="noopener"><img src="nightfall_hero.jpg" alt="Home — above the fold — nightfall" loading="lazy"></a>
+        <figcaption>Home — above the fold</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="nightfall_home_full.jpg" target="_blank" rel="noopener"><img src="nightfall_home_full.jpg" alt="Home — full page — nightfall" loading="lazy"></a>
+        <figcaption>Home — full page</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="nightfall_resources.jpg" target="_blank" rel="noopener"><img src="nightfall_resources.jpg" alt="Programmes (expanded) — nightfall" loading="lazy"></a>
+        <figcaption>Programmes (expanded)</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="nightfall_media.jpg" target="_blank" rel="noopener"><img src="nightfall_media.jpg" alt="Media library — nightfall" loading="lazy"></a>
+        <figcaption>Media library</figcaption>
+      </figure>
+      <figure class="shot tall">
+        <a href="nightfall_mobile.jpg" target="_blank" rel="noopener"><img src="nightfall_mobile.jpg" alt="Mobile (390px) — nightfall" loading="lazy"></a>
+        <figcaption>Mobile (390px)</figcaption>
+      </figure>
+    </div>
+  </section>
+  <section class="theme" id="varsity">
+    <header>
+      <div>
+        <h2>Varsity <span class="mode">light</span></h2>
+        <p>Loud and collegiate. Crimson on charcoal, heavy weights, big radii, chunky shadows. School-spirit energy for recruiting season.</p>
+      </div>
+      <div class="side">
+        <div class="dots"><span style="background:#F7F7FA"></span><span style="background:#C8102E"></span><span style="background:#0C0C10"></span></div>
+        <a class="open" href="../themes.html?theme=varsity">Open live&nbsp;↗</a>
+      </div>
+    </header>
+    <div class="strip">
+      <figure class="shot wide">
+        <a href="varsity_hero.jpg" target="_blank" rel="noopener"><img src="varsity_hero.jpg" alt="Home — above the fold — varsity" loading="lazy"></a>
+        <figcaption>Home — above the fold</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="varsity_home_full.jpg" target="_blank" rel="noopener"><img src="varsity_home_full.jpg" alt="Home — full page — varsity" loading="lazy"></a>
+        <figcaption>Home — full page</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="varsity_resources.jpg" target="_blank" rel="noopener"><img src="varsity_resources.jpg" alt="Programmes (expanded) — varsity" loading="lazy"></a>
+        <figcaption>Programmes (expanded)</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="varsity_media.jpg" target="_blank" rel="noopener"><img src="varsity_media.jpg" alt="Media library — varsity" loading="lazy"></a>
+        <figcaption>Media library</figcaption>
+      </figure>
+      <figure class="shot tall">
+        <a href="varsity_mobile.jpg" target="_blank" rel="noopener"><img src="varsity_mobile.jpg" alt="Mobile (390px) — varsity" loading="lazy"></a>
+        <figcaption>Mobile (390px)</figcaption>
+      </figure>
+    </div>
+  </section>
+</div>
+</body>
+</html>

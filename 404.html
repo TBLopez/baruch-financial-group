@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Page not found — Baruch College Financial Group</title>
+<meta name="description" content="That page could not be found.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#07101f">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/themes.css">
+<script>
+  (function () {
+    try {
+      var q = new URLSearchParams(location.search).get('theme');
+      var s = localStorage.getItem('bcfg.theme');
+      var ok = ['ivory', 'atlas', 'terrace', 'nightfall', 'varsity'];
+      document.documentElement.dataset.theme = ok.indexOf(q) > -1 ? q : (ok.indexOf(s) > -1 ? s : 'ivory');
+    } catch (e) { document.documentElement.dataset.theme = 'ivory'; }
+  })();
+</script>
+<style>
+  .nf { min-height: 100vh; display: grid; place-items: center; padding: var(--pad); }
+  .nf-card { text-align: center; max-width: 560px; }
+  .nf-kicker { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-text); }
+  .nf h1 { font-size: clamp(64px, 14vw, 140px); line-height: 1; margin: 8px 0 6px; color: var(--ink-strong); }
+  .nf p { color: var(--ink-2); font-size: 17px; }
+  .nf-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+</style>
+</head>
+<body>
+  <div class="nf">
+    <div class="nf-card">
+      <p class="nf-kicker">Baruch College Financial Group</p>
+      <h1>404</h1>
+      <p>The page you were looking for does not exist — but the rest of the site does.</p>
+      <div class="nf-actions">
+        <a class="btn brass" href="index.html">Go home</a>
+        <a class="btn ghost" href="resources.html">Programmes</a>
+        <a class="btn ghost" href="media.html">Media library</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

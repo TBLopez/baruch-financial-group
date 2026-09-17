@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+._*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Node (only needed if you add a blog/CMS toolchain later)
+node_modules/
+npm-debug.log*
+
+# Local secrets — never commit
+.env
+.env.*
+CNAME.local
