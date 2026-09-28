@@ -494,41 +494,41 @@ p { margin: 0; text-wrap: pretty; }
 .stats-col {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
-  gap: clamp(12px, 1.3vw, 16px);
+  gap: clamp(14px, 1.6vw, 20px);
   align-items: stretch;
   background: var(--surface);
-  padding: clamp(18px, 2vw, 26px) clamp(10px, 1.1vw, 12px);
+  padding: clamp(18px, 2vw, 24px) clamp(14px, 1.4vw, 17px);
   min-width: 0;
 }
 .stats-col-body { display: flex; flex-direction: column; min-width: 0; }
 .stats-col-feature .stats-col-body { text-align: center; }
+.stats-col-feature .stats-visual { align-self: center; }
 
-.stats-logo, .stats-photo { width: clamp(88px, 8vw, 102px); align-self: start; }
+.stats-logo, .stats-photo { width: clamp(92px, 8.2vw, 106px); align-self: start; }
 .stats-logo {
   aspect-ratio: 1; border-radius: 50%;
-  border: 3.5px solid var(--btn-bg);
+  border: 4px solid var(--btn-bg);
   display: grid; place-items: center; color: var(--accent);
 }
-.stats-logo svg { width: 52%; height: 52%; }
+.stats-logo svg { width: 60%; height: 60%; }
 .stats-photo {
-  height: clamp(124px, 11.7vw, 150px);
+  height: clamp(130px, 11.9vw, 153px);
   border-radius: 16px; overflow: hidden; background: var(--band-bg);
 }
-.stats-photo img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(.92); }
+.stats-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .stats-num {
   font-family: "DM Serif Display", var(--display);
   font-weight: 400;
   font-size: clamp(30px, 4.6vw, 60px);
-  line-height: 1; letter-spacing: -0.01em; color: #242e3a; white-space: nowrap;
+  line-height: 1; letter-spacing: -0.01em; color: #242e3a;
 }
-.stats-num .unit { font-size: 0.62em; }
-.stats-caption { font-family: var(--sans); font-size: 13px; line-height: 1.5; color: #242e3a; margin-top: 16px; }
+.stats-caption { font-family: var(--sans); font-size: 12.5px; line-height: 1.35; color: #242e3a; margin-top: 16px; }
 .stats-caption .stats-note { display: block; margin-top: 2px; }
 .stats-foot {
   margin-top: auto; padding-top: 18px;
   font-family: "Playfair Display", var(--display); font-weight: 500;
-  font-size: 14px; letter-spacing: -0.01em;
+  font-size: 15px; letter-spacing: -0.01em; white-space: nowrap;
   color: #242e3a;
 }
 

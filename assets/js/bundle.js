@@ -44,6 +44,19 @@ const BRAND = {
   contact: 'baruchfinancialgroup@gmail.com · NVC, 55 Lexington Ave',
 };
 
+/* The "at a glance" ribbon — member training hours, mirroring the reference
+   layout (a cumulative total + three members with their hours and class year). */
+const TRAINING = {
+  hours: 252,
+  label: 'Cumulative hours<br>achieved by<br>BCFG members',
+};
+
+const MEMBER_HOURS = [
+  { name: "Jordan Rivera '26", hours: 30 },
+  { name: "Priya Raman '27", hours: 48 },
+  { name: "Marcus Lee '26", hours: 25 },
+];
+
 /* Where the student-managed fund is allocated — the "at a glance" band. */
 const AUM_BREAKDOWN = [
   { label: 'Equities', value: 120, unit: 'K', note: 'Core and dividend sleeves', icon: 'bars' },
@@ -595,7 +608,7 @@ const EVENTS = [
   },
 ];
 
-return { FIRM, BRAND, AUM_BREAKDOWN, SLIDES, CATEGORIES, AUDIENCES, PROGRAMS, SAMPLE_MEDIA, INSIGHTS, EVENT_CATEGORIES, EVENTS };
+return { FIRM, BRAND, TRAINING, MEMBER_HOURS, AUM_BREAKDOWN, SLIDES, CATEGORIES, AUDIENCES, PROGRAMS, SAMPLE_MEDIA, INSIGHTS, EVENT_CATEGORIES, EVENTS };
 });
 
 __def("theme-meta", function () {
@@ -1341,7 +1354,7 @@ __def("home", function () {
    ========================================================================== */
 
 const {ICONS, $, $$, esc, prefersReduced, initReveal, initCounters, countUp, mountChrome} = __req('site');
-const {SLIDES, AUM_BREAKDOWN, FIRM, INSIGHTS, PROGRAMS} = __req('data');
+const {SLIDES, TRAINING, MEMBER_HOURS, FIRM, INSIGHTS, PROGRAMS} = __req('data');
 const {mountThemeDock} = __req('theme');
 const DURATION = 8500; // ms per slide
 
@@ -1570,17 +1583,17 @@ function renderAumBand() {
         <div class="stats-col stats-col-feature">
           <div class="stats-visual stats-logo" aria-hidden="true">${ICONS.mark}</div>
           <div class="stats-col-body">
-            <div class="stats-num"><span class="unit">$</span><span data-count="${FIRM.fund}">0</span><span class="unit">K</span></div>
-            <div class="stats-caption">Student-managed fund<span class="stats-note">Alumni-funded · ${esc(FIRM.fundAsOf)}</span></div>
+            <div class="stats-num"><span data-count="${TRAINING.hours}">0</span></div>
+            <div class="stats-caption">${TRAINING.label}</div>
           </div>
         </div>
-        ${AUM_BREAKDOWN.map((a) => `
+        ${MEMBER_HOURS.map((m) => `
           <div class="stats-col">
             <div class="stats-visual stats-photo"><img src="assets/portrait-placeholder.png" alt="" loading="lazy"></div>
             <div class="stats-col-body">
-              <div class="stats-num"><span class="unit">$</span><span data-count="${a.value}">0</span><span class="unit">K</span></div>
-              <div class="stats-caption">${esc(a.label)}</div>
-              <div class="stats-foot">${esc(a.note)}</div>
+              <div class="stats-num"><span data-count="${m.hours}">0</span></div>
+              <div class="stats-caption">Analyst training<br>hours completed</div>
+              <div class="stats-foot">${esc(m.name)}</div>
             </div>
           </div>`).join('')}
       </div>

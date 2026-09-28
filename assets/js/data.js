@@ -31,6 +31,19 @@ export const BRAND = {
   contact: 'baruchfinancialgroup@gmail.com · NVC, 55 Lexington Ave',
 };
 
+/* The "at a glance" ribbon — member training hours, mirroring the reference
+   layout (a cumulative total + three members with their hours and class year). */
+export const TRAINING = {
+  hours: 252,
+  label: 'Cumulative hours<br>achieved by<br>BCFG members',
+};
+
+export const MEMBER_HOURS = [
+  { name: "Jordan Rivera '26", hours: 30 },
+  { name: "Priya Raman '27", hours: 48 },
+  { name: "Marcus Lee '26", hours: 25 },
+];
+
 /* Where the student-managed fund is allocated — the "at a glance" band. */
 export const AUM_BREAKDOWN = [
   { label: 'Equities', value: 120, unit: 'K', note: 'Core and dividend sleeves', icon: 'bars' },

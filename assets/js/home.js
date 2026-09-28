@@ -5,7 +5,7 @@
 import {
   ICONS, $, $$, esc, prefersReduced, initReveal, initCounters, countUp, mountChrome,
 } from './site.js';
-import { SLIDES, AUM_BREAKDOWN, FIRM, INSIGHTS, PROGRAMS } from './data.js';
+import { SLIDES, TRAINING, MEMBER_HOURS, FIRM, INSIGHTS, PROGRAMS } from './data.js';
 import { mountThemeDock } from './theme.js';
 
 const DURATION = 8500; // ms per slide
@@ -235,17 +235,17 @@ function renderAumBand() {
         <div class="stats-col stats-col-feature">
           <div class="stats-visual stats-logo" aria-hidden="true">${ICONS.mark}</div>
           <div class="stats-col-body">
-            <div class="stats-num"><span class="unit">$</span><span data-count="${FIRM.fund}">0</span><span class="unit">K</span></div>
-            <div class="stats-caption">Student-managed fund<span class="stats-note">Alumni-funded · ${esc(FIRM.fundAsOf)}</span></div>
+            <div class="stats-num"><span data-count="${TRAINING.hours}">0</span></div>
+            <div class="stats-caption">${TRAINING.label}</div>
           </div>
         </div>
-        ${AUM_BREAKDOWN.map((a) => `
+        ${MEMBER_HOURS.map((m) => `
           <div class="stats-col">
             <div class="stats-visual stats-photo"><img src="assets/portrait-placeholder.png" alt="" loading="lazy"></div>
             <div class="stats-col-body">
-              <div class="stats-num"><span class="unit">$</span><span data-count="${a.value}">0</span><span class="unit">K</span></div>
-              <div class="stats-caption">${esc(a.label)}</div>
-              <div class="stats-foot">${esc(a.note)}</div>
+              <div class="stats-num"><span data-count="${m.hours}">0</span></div>
+              <div class="stats-caption">Analyst training<br>hours completed</div>
+              <div class="stats-foot">${esc(m.name)}</div>
             </div>
           </div>`).join('')}
       </div>
