@@ -479,49 +479,58 @@ p { margin: 0; text-wrap: pretty; }
 .pill.warn { background: var(--warn-soft); color: var(--warn); border-color: var(--warn-soft); }
 .pill .dot { width: 6px; height: 6px; border-radius: 999px; background: currentColor; }
 
-/* Stats ribbon — one white card, four equal columns split by hairline rules.
-   Each column pairs a visual (brand mark or sector tile) with a big serif
-   figure and a sans caption to its right. */
+/* Stats ribbon — one continuous white band, four equal columns split by
+   full-height hairline rules. Each column leads with a large visual (brand
+   mark / sector tile) sized like the reference's portrait, with the big
+   serif figure top-aligned to it and a lower caption pinned to the bottom. */
 .stats-ribbon {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1px;
-  background: var(--line);
+  background: rgba(0, 0, 0, 0.13);
   border-radius: var(--r-lg);
   overflow: hidden;
 }
 .stats-col {
-  display: flex; align-items: flex-start;
-  gap: clamp(12px, 1.2vw, 16px);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(12px, 1.3vw, 16px);
+  align-items: stretch;
   background: var(--surface);
-  padding: clamp(22px, 2.4vw, 34px) clamp(14px, 1.2vw, 20px);
+  padding: clamp(18px, 2vw, 26px) clamp(10px, 1.1vw, 12px);
   min-width: 0;
 }
-.stats-col-body { min-width: 0; }
-.stats-col-lead .stats-col-body { text-align: center; }
+.stats-col-body { display: flex; flex-direction: column; min-width: 0; }
+.stats-col-feature .stats-col-body { text-align: center; }
 
+.stats-logo, .stats-photo { width: clamp(88px, 8vw, 102px); align-self: start; }
 .stats-logo {
-  flex: none; width: 54px; height: 54px; border-radius: 50%;
-  border: 2px solid var(--btn-bg);
+  aspect-ratio: 1; border-radius: 50%;
+  border: 3.5px solid var(--btn-bg);
   display: grid; place-items: center; color: var(--accent);
 }
-.stats-logo svg { width: 26px; height: 26px; }
-
-.stats-icon {
-  flex: none; width: 54px; height: 78px; border-radius: 14px;
-  background: var(--band-bg); color: #fff;
-  display: grid; place-items: center;
+.stats-logo svg { width: 52%; height: 52%; }
+.stats-photo {
+  height: clamp(124px, 11.7vw, 150px);
+  border-radius: 16px; overflow: hidden; background: var(--band-bg);
 }
-.stats-icon svg { width: 25px; height: 25px; }
+.stats-photo img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(.92); }
 
 .stats-num {
-  font-family: var(--display);
-  font-size: clamp(30px, 3.4vw, 46px);
-  line-height: 1; letter-spacing: -0.02em; color: var(--ink-strong);
+  font-family: "DM Serif Display", var(--display);
+  font-weight: 400;
+  font-size: clamp(30px, 4.6vw, 60px);
+  line-height: 1; letter-spacing: -0.01em; color: #242e3a; white-space: nowrap;
 }
-.stats-num .suffix { font-size: 0.52em; color: var(--accent-text); margin-left: 1px; }
-.stats-caption { font-family: var(--sans); font-size: 13px; line-height: 1.5; color: var(--ink-2); margin-top: 9px; text-wrap: pretty; }
-.stats-caption .stats-note { display: block; color: var(--ink-3); margin-top: 2px; }
+.stats-num .unit { font-size: 0.62em; }
+.stats-caption { font-family: var(--sans); font-size: 13px; line-height: 1.5; color: #242e3a; margin-top: 16px; }
+.stats-caption .stats-note { display: block; margin-top: 2px; }
+.stats-foot {
+  margin-top: auto; padding-top: 18px;
+  font-family: "Playfair Display", var(--display); font-weight: 500;
+  font-size: 14px; letter-spacing: -0.01em;
+  color: #242e3a;
+}
 
 .feature-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(18px, 2.6vw, 34px); }
 .feature { padding-top: 24px; border-top: 2px solid var(--btn-bg); }

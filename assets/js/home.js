@@ -232,19 +232,20 @@ function renderAumBand() {
   host.innerHTML = `
     <div class="wrap">
       <div class="stats-ribbon reveal">
-        <div class="stats-col stats-col-lead">
-          <span class="stats-logo" aria-hidden="true">${ICONS.mark}</span>
+        <div class="stats-col stats-col-feature">
+          <div class="stats-visual stats-logo" aria-hidden="true">${ICONS.mark}</div>
           <div class="stats-col-body">
-            <div class="stats-num">$<span data-count="${FIRM.fund}">0</span><span class="suffix">K</span></div>
-            <div class="stats-caption">Student-managed fund<span class="stats-note">Alumni-funded · ${esc(FIRM.fundAsOf).replace(/ /g, '&nbsp;')}</span></div>
+            <div class="stats-num"><span class="unit">$</span><span data-count="${FIRM.fund}">0</span><span class="unit">K</span></div>
+            <div class="stats-caption">Student-managed fund<span class="stats-note">Alumni-funded · ${esc(FIRM.fundAsOf)}</span></div>
           </div>
         </div>
         ${AUM_BREAKDOWN.map((a) => `
           <div class="stats-col">
-            <span class="stats-icon" aria-hidden="true">${ICONS[a.icon] || ICONS.bars}</span>
+            <div class="stats-visual stats-photo"><img src="assets/portrait-placeholder.png" alt="" loading="lazy"></div>
             <div class="stats-col-body">
-              <div class="stats-num">$<span data-count="${a.value}">0</span><span class="suffix">K</span></div>
-              <div class="stats-caption">${esc(a.label)}<span class="stats-note">${esc(a.note)}</span></div>
+              <div class="stats-num"><span class="unit">$</span><span data-count="${a.value}">0</span><span class="unit">K</span></div>
+              <div class="stats-caption">${esc(a.label)}</div>
+              <div class="stats-foot">${esc(a.note)}</div>
             </div>
           </div>`).join('')}
       </div>
