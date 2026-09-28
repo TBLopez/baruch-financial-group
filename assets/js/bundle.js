@@ -47,7 +47,7 @@ const BRAND = {
 /* Where the student-managed fund is allocated — the "at a glance" band. */
 const AUM_BREAKDOWN = [
   { label: 'Equities', value: 120, unit: 'K', note: 'Core and dividend sleeves', icon: 'bars' },
-  { label: 'Fixed income', value: 50, unit: 'K', note: 'Treasury ladder and short-duration credit', icon: 'shield' },
+  { label: 'Fixed income', value: 50, unit: 'K', note: 'Treasury ladder, short credit', icon: 'shield' },
   { label: 'Alternatives', value: 30, unit: 'K', note: 'REITs and a satellite sleeve', icon: 'layers' },
 ];
 
@@ -685,6 +685,7 @@ const ICONS = {
   bars: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>',
   shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l7.5 3v6c0 4.6-3.1 7.9-7.5 9.4C7.6 19.9 4.5 16.6 4.5 12V6z"/><path d="M9 12l2 2 4-4"/></svg>',
   layers: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg>',
+  mark: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19V7.5L8.5 13 12 6l3.5 7L21 7.5V19"/><path d="M3 19h18"/></svg>',
 };
 
 /* ---------------------------------------------------------------- helpers */
@@ -1566,25 +1567,21 @@ function renderAumBand() {
   host.innerHTML = `
     <div class="wrap">
       <div class="stats-ribbon reveal">
-        <div class="stats-intro">
-          <span class="stats-badge" aria-hidden="true">${ICONS.trendingUp}</span>
-          <div class="stats-intro-body">
-            <p class="stats-eyebrow">The fund at a glance</p>
-            <h2 class="stats-title">$<span data-count="${FIRM.fund}">0</span>K, student-managed</h2>
-            <p class="stats-sub">Alumni-funded · ${esc(FIRM.fundAsOf)}</p>
+        <div class="stats-col stats-col-lead">
+          <span class="stats-logo" aria-hidden="true">${ICONS.mark}</span>
+          <div class="stats-col-body">
+            <div class="stats-num">$<span data-count="${FIRM.fund}">0</span><span class="suffix">K</span></div>
+            <div class="stats-caption">Student-managed fund<span class="stats-note">Alumni-funded · ${esc(FIRM.fundAsOf).replace(/ /g, '&nbsp;')}</span></div>
           </div>
         </div>
-        <div class="stats-cells">
-          ${AUM_BREAKDOWN.map((a, i) => `
-            <div class="stats-cell reveal d${i + 1}">
-              <span class="stats-cell-badge" aria-hidden="true">${ICONS[a.icon] || ICONS.bars}</span>
-              <div class="stats-cell-body">
-                <div class="count">$<span data-count="${a.value}">0</span><span class="suffix">K</span></div>
-                <div class="lbl">${esc(a.label)}</div>
-                <div class="note">${esc(a.note)}</div>
-              </div>
-            </div>`).join('')}
-        </div>
+        ${AUM_BREAKDOWN.map((a) => `
+          <div class="stats-col">
+            <span class="stats-icon" aria-hidden="true">${ICONS[a.icon] || ICONS.bars}</span>
+            <div class="stats-col-body">
+              <div class="stats-num">$<span data-count="${a.value}">0</span><span class="suffix">K</span></div>
+              <div class="stats-caption">${esc(a.label)}<span class="stats-note">${esc(a.note)}</span></div>
+            </div>
+          </div>`).join('')}
       </div>
     </div>`;
 }

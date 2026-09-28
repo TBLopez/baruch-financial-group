@@ -232,25 +232,21 @@ function renderAumBand() {
   host.innerHTML = `
     <div class="wrap">
       <div class="stats-ribbon reveal">
-        <div class="stats-intro">
-          <span class="stats-badge" aria-hidden="true">${ICONS.trendingUp}</span>
-          <div class="stats-intro-body">
-            <p class="stats-eyebrow">The fund at a glance</p>
-            <h2 class="stats-title">$<span data-count="${FIRM.fund}">0</span>K, student-managed</h2>
-            <p class="stats-sub">Alumni-funded · ${esc(FIRM.fundAsOf)}</p>
+        <div class="stats-col stats-col-lead">
+          <span class="stats-logo" aria-hidden="true">${ICONS.mark}</span>
+          <div class="stats-col-body">
+            <div class="stats-num">$<span data-count="${FIRM.fund}">0</span><span class="suffix">K</span></div>
+            <div class="stats-caption">Student-managed fund<span class="stats-note">Alumni-funded · ${esc(FIRM.fundAsOf).replace(/ /g, '&nbsp;')}</span></div>
           </div>
         </div>
-        <div class="stats-cells">
-          ${AUM_BREAKDOWN.map((a, i) => `
-            <div class="stats-cell reveal d${i + 1}">
-              <span class="stats-cell-badge" aria-hidden="true">${ICONS[a.icon] || ICONS.bars}</span>
-              <div class="stats-cell-body">
-                <div class="count">$<span data-count="${a.value}">0</span><span class="suffix">K</span></div>
-                <div class="lbl">${esc(a.label)}</div>
-                <div class="note">${esc(a.note)}</div>
-              </div>
-            </div>`).join('')}
-        </div>
+        ${AUM_BREAKDOWN.map((a) => `
+          <div class="stats-col">
+            <span class="stats-icon" aria-hidden="true">${ICONS[a.icon] || ICONS.bars}</span>
+            <div class="stats-col-body">
+              <div class="stats-num">$<span data-count="${a.value}">0</span><span class="suffix">K</span></div>
+              <div class="stats-caption">${esc(a.label)}<span class="stats-note">${esc(a.note)}</span></div>
+            </div>
+          </div>`).join('')}
       </div>
     </div>`;
 }
