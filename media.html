@@ -21,14 +21,8 @@
 <link rel="stylesheet" href="assets/css/styles.css">
 <link rel="stylesheet" href="assets/css/themes.css">
 <script>
-  (function () {
-    try {
-      var q = new URLSearchParams(location.search).get('theme');
-      var s = localStorage.getItem('bcfg.theme');
-      var ok = ['ivory', 'atlas', 'terrace', 'nightfall', 'varsity'];
-      document.documentElement.dataset.theme = ok.indexOf(q) > -1 ? q : (ok.indexOf(s) > -1 ? s : 'ivory');
-    } catch (e) { document.documentElement.dataset.theme = 'ivory'; }
-  })();
+  /* Locked to the Ivory & Navy style. */
+  document.documentElement.dataset.theme = 'ivory';
 </script>
 </head>
 <body data-page="media">

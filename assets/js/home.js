@@ -231,16 +231,26 @@ function renderAumBand() {
   if (!host) return;
   host.innerHTML = `
     <div class="wrap">
-      <div class="stat-band reveal">
-        <div class="stat-cell">
-          <div class="count">$<span data-count="${FIRM.fund}">0</span><span class="suffix">K</span></div>
-          <div class="lbl">Student-managed fund<br><span class="tiny">Alumni-funded · ${esc(FIRM.fundAsOf)}</span></div>
+      <div class="stats-ribbon reveal">
+        <div class="stats-intro">
+          <span class="stats-badge" aria-hidden="true">${ICONS.trendingUp}</span>
+          <div class="stats-intro-body">
+            <p class="stats-eyebrow">The fund at a glance</p>
+            <h2 class="stats-title">$<span data-count="${FIRM.fund}">0</span>K, student-managed</h2>
+            <p class="stats-sub">Alumni-funded · ${esc(FIRM.fundAsOf)}</p>
+          </div>
         </div>
-        ${AUM_BREAKDOWN.map((a) => `
-          <div class="stat-cell">
-            <div class="count">$${a.unit === 'K' ? '<span data-count="' + a.value + '">0</span>' : '<span data-count="' + a.value + '" data-decimals="1">0</span>'}<span class="suffix">${a.unit}</span></div>
-            <div class="lbl">${esc(a.label)}<br><span class="tiny">${esc(a.note)}</span></div>
-          </div>`).join('')}
+        <div class="stats-cells">
+          ${AUM_BREAKDOWN.map((a, i) => `
+            <div class="stats-cell reveal d${i + 1}">
+              <span class="stats-cell-badge" aria-hidden="true">${ICONS[a.icon] || ICONS.bars}</span>
+              <div class="stats-cell-body">
+                <div class="count">$<span data-count="${a.value}">0</span><span class="suffix">K</span></div>
+                <div class="lbl">${esc(a.label)}</div>
+                <div class="note">${esc(a.note)}</div>
+              </div>
+            </div>`).join('')}
+        </div>
       </div>
     </div>`;
 }

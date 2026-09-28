@@ -51,44 +51,7 @@ export function applyTheme(id, { persist = true, silent = false } = {}) {
   }
 }
 
-/** Floating swatch dock. */
+/** Floating swatch dock — removed. The site is locked to Ivory & Navy. */
 export function mountThemeDock() {
-  if ($('.theme-dock')) return;
-
-  const active = currentTheme();
-  const dock = document.createElement('div');
-  dock.className = 'theme-dock';
-  dock.innerHTML = `
-    <span class="dock-label">Style</span>
-    <div class="dock-swatches" role="radiogroup" aria-label="Visual style">
-      ${THEME_META.map((t) => `
-        <button class="sw" role="radio" data-pick="${t.id}"
-                aria-checked="${t.id === active}" title="${esc(t.label)} — ${esc(t.blurb)}"
-                aria-label="${esc(t.label)}">
-          <span class="sw-chip" aria-hidden="true"
-                style="background:linear-gradient(135deg, ${t.swatch[0]} 0 46%, ${t.swatch[1]} 46% 72%, ${t.swatch[2]} 72% 100%)"></span>
-          <span class="sw-name">${esc(t.label.split(' ')[0])}</span>
-        </button>`).join('')}
-    </div>
-    <a class="dock-link" href="themes.html">Compare all</a>`;
-
-  document.body.appendChild(dock);
-
-  dock.addEventListener('click', (e) => {
-    const b = e.target.closest('[data-pick]');
-    if (!b) return;
-    applyTheme(b.dataset.pick);
-  });
-
-  // arrow-key navigation inside the radio group
-  dock.addEventListener('keydown', (e) => {
-    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-    const btns = [...dock.querySelectorAll('[data-pick]')];
-    const i = btns.indexOf(document.activeElement);
-    if (i < 0) return;
-    e.preventDefault();
-    const next = btns[(i + (e.key === 'ArrowRight' ? 1 : -1) + btns.length) % btns.length];
-    next.focus();
-    applyTheme(next.dataset.pick);
-  });
+  return;
 }

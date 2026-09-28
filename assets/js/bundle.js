@@ -46,9 +46,9 @@ const BRAND = {
 
 /* Where the student-managed fund is allocated — the "at a glance" band. */
 const AUM_BREAKDOWN = [
-  { label: 'Equities', value: 120, unit: 'K', note: 'Core and dividend sleeves' },
-  { label: 'Fixed income', value: 50, unit: 'K', note: 'Treasury ladder and short-duration credit' },
-  { label: 'Alternatives', value: 30, unit: 'K', note: 'REITs and a satellite sleeve' },
+  { label: 'Equities', value: 120, unit: 'K', note: 'Core and dividend sleeves', icon: 'bars' },
+  { label: 'Fixed income', value: 50, unit: 'K', note: 'Treasury ladder and short-duration credit', icon: 'shield' },
+  { label: 'Alternatives', value: 30, unit: 'K', note: 'REITs and a satellite sleeve', icon: 'layers' },
 ];
 
 /* --------------------------------------------------------- hero carousel
@@ -681,6 +681,10 @@ const ICONS = {
   compress: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4v5H4M15 20v-5h5M15 4v5h5M9 20v-5H4"/></svg>',
   close: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>',
   doc: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h7l5 5v13H6z"/><path d="M13 3v5h5"/></svg>',
+  trendingUp: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>',
+  bars: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>',
+  shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l7.5 3v6c0 4.6-3.1 7.9-7.5 9.4C7.6 19.9 4.5 16.6 4.5 12V6z"/><path d="M9 12l2 2 4-4"/></svg>',
+  layers: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg>',
 };
 
 /* ---------------------------------------------------------------- helpers */
@@ -964,46 +968,9 @@ function applyTheme(id, { persist = true, silent = false } = {}) {
   }
 }
 
-/** Floating swatch dock. */
+/** Floating swatch dock — removed. The site is locked to Ivory & Navy. */
 function mountThemeDock() {
-  if ($('.theme-dock')) return;
-
-  const active = currentTheme();
-  const dock = document.createElement('div');
-  dock.className = 'theme-dock';
-  dock.innerHTML = `
-    <span class="dock-label">Style</span>
-    <div class="dock-swatches" role="radiogroup" aria-label="Visual style">
-      ${THEME_META.map((t) => `
-        <button class="sw" role="radio" data-pick="${t.id}"
-                aria-checked="${t.id === active}" title="${esc(t.label)} — ${esc(t.blurb)}"
-                aria-label="${esc(t.label)}">
-          <span class="sw-chip" aria-hidden="true"
-                style="background:linear-gradient(135deg, ${t.swatch[0]} 0 46%, ${t.swatch[1]} 46% 72%, ${t.swatch[2]} 72% 100%)"></span>
-          <span class="sw-name">${esc(t.label.split(' ')[0])}</span>
-        </button>`).join('')}
-    </div>
-    <a class="dock-link" href="themes.html">Compare all</a>`;
-
-  document.body.appendChild(dock);
-
-  dock.addEventListener('click', (e) => {
-    const b = e.target.closest('[data-pick]');
-    if (!b) return;
-    applyTheme(b.dataset.pick);
-  });
-
-  // arrow-key navigation inside the radio group
-  dock.addEventListener('keydown', (e) => {
-    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-    const btns = [...dock.querySelectorAll('[data-pick]')];
-    const i = btns.indexOf(document.activeElement);
-    if (i < 0) return;
-    e.preventDefault();
-    const next = btns[(i + (e.key === 'ArrowRight' ? 1 : -1) + btns.length) % btns.length];
-    next.focus();
-    applyTheme(next.dataset.pick);
-  });
+  return;
 }
 
 return { currentTheme, applyTheme, mountThemeDock };
@@ -1598,16 +1565,26 @@ function renderAumBand() {
   if (!host) return;
   host.innerHTML = `
     <div class="wrap">
-      <div class="stat-band reveal">
-        <div class="stat-cell">
-          <div class="count">$<span data-count="${FIRM.fund}">0</span><span class="suffix">K</span></div>
-          <div class="lbl">Student-managed fund<br><span class="tiny">Alumni-funded · ${esc(FIRM.fundAsOf)}</span></div>
+      <div class="stats-ribbon reveal">
+        <div class="stats-intro">
+          <span class="stats-badge" aria-hidden="true">${ICONS.trendingUp}</span>
+          <div class="stats-intro-body">
+            <p class="stats-eyebrow">The fund at a glance</p>
+            <h2 class="stats-title">$<span data-count="${FIRM.fund}">0</span>K, student-managed</h2>
+            <p class="stats-sub">Alumni-funded · ${esc(FIRM.fundAsOf)}</p>
+          </div>
         </div>
-        ${AUM_BREAKDOWN.map((a) => `
-          <div class="stat-cell">
-            <div class="count">$${a.unit === 'K' ? '<span data-count="' + a.value + '">0</span>' : '<span data-count="' + a.value + '" data-decimals="1">0</span>'}<span class="suffix">${a.unit}</span></div>
-            <div class="lbl">${esc(a.label)}<br><span class="tiny">${esc(a.note)}</span></div>
-          </div>`).join('')}
+        <div class="stats-cells">
+          ${AUM_BREAKDOWN.map((a, i) => `
+            <div class="stats-cell reveal d${i + 1}">
+              <span class="stats-cell-badge" aria-hidden="true">${ICONS[a.icon] || ICONS.bars}</span>
+              <div class="stats-cell-body">
+                <div class="count">$<span data-count="${a.value}">0</span><span class="suffix">K</span></div>
+                <div class="lbl">${esc(a.label)}</div>
+                <div class="note">${esc(a.note)}</div>
+              </div>
+            </div>`).join('')}
+        </div>
       </div>
     </div>`;
 }

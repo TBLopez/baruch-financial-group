@@ -33,9 +33,9 @@ export const BRAND = {
 
 /* Where the student-managed fund is allocated — the "at a glance" band. */
 export const AUM_BREAKDOWN = [
-  { label: 'Equities', value: 120, unit: 'K', note: 'Core and dividend sleeves' },
-  { label: 'Fixed income', value: 50, unit: 'K', note: 'Treasury ladder and short-duration credit' },
-  { label: 'Alternatives', value: 30, unit: 'K', note: 'REITs and a satellite sleeve' },
+  { label: 'Equities', value: 120, unit: 'K', note: 'Core and dividend sleeves', icon: 'bars' },
+  { label: 'Fixed income', value: 50, unit: 'K', note: 'Treasury ladder and short-duration credit', icon: 'shield' },
+  { label: 'Alternatives', value: 30, unit: 'K', note: 'REITs and a satellite sleeve', icon: 'layers' },
 ];
 
 /* --------------------------------------------------------- hero carousel
